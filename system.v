@@ -2,12 +2,14 @@ module system(
         input wire  [4:0]ra3,
         input wire  [31:0]gpI1,
         input wire  [31:0]gpI2,
+        input wire  clk,
+        input  wire rst,
         output wire [31:0]rd3,
         output wire [31:0]gpO1,
         output wire [31:0]gpO2
     );
 
-wire clk, rst, WE, WE1, WE2, WEM;
+wire WE, WE1, WE2, WEM;
 wire [1:0]RdSel;
 wire [31:0]pc_current;
 wire [31:0]Instruction;
@@ -22,7 +24,7 @@ imem imem(
         .a  (pc_current[7:2]),
         .y  (Instruction)
     );
-
+/*
 mips mips(
         .clk            (clk),
         .rst            (rst),
@@ -35,8 +37,8 @@ mips mips(
         .wd_dm          (WD),
         .rd3            (rd3)
     );
-    
-addr_dec addr_dec(
+*/   
+/*addr_dec addr_dec(
         .WE     (WE),
         .A      (A),
         .WE1    (WE1),
@@ -44,7 +46,7 @@ addr_dec addr_dec(
         .WEM    (WEM),
         .RdSel  (RdSel)
     );
-
+*/
 dmem dmem (
         .clk            (clk),
         .we             (WEM),
@@ -53,7 +55,7 @@ dmem dmem (
         .q              (DMemData)
     );
 
-fact_top fact_top(
+Factorial_Accelerator fact_top(
         .clk    (clk),
         .rst    (rst),
         .A      (A[3:2]),
@@ -62,7 +64,7 @@ fact_top fact_top(
         .RD     (FactData)
     );
     
-gpio_top gpio_top(
+/*gpio_top gpio_top(
         .clk    (clk),
         .rst    (rst),
         .A      (A[3:2]),
@@ -74,8 +76,8 @@ gpio_top gpio_top(
         .gpO1   (gpO1),
         .gpO2   (gpO2)
     );
-    
-mux4 mux4(
+*/    
+mux4 #(32) mux4(
         .sel    (RdSel),
         .a      (DMemData),
         .b      (DMemData),
