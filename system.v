@@ -1,9 +1,9 @@
 module system(
+        input wire  clk,
+        input wire rst,
         input wire  [4:0]ra3,
         input wire  [31:0]gpI1,
         input wire  [31:0]gpI2,
-        input wire  clk,
-        input  wire rst,
         output wire [31:0]rd3,
         output wire [31:0]gpO1,
         output wire [31:0]gpO2
