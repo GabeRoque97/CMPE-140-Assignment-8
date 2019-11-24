@@ -304,14 +304,14 @@ module datapath (
         );
 
     mux2 #(32) pc_src_mux (
-            .sel            (br_and_zeroM),
+            .sel            (br_and_zeroM),//.sel            (1'b0),//
             .a              (pc_plus_4F),
             .b              (btaM),
             .y              (pc_pre)
         );
 
     mux2 #(32) pc_jmp_mux (
-            .sel            (jumpW),
+            .sel            (jumpW),//.sel            (1'b0),//
             .a              (pc_pre),
             .b              (jtaW),
             .y              (pc_jmp)
@@ -320,7 +320,7 @@ module datapath (
     mux2 #(32) jr_mux (//mux for writing value of $ra to pc_next
             .a              (pc_jmp),
             .b              (alu_paW),
-            .sel            (jr_selW),
+            .sel            (jr_selW),//.sel            (1'b0),//
             .y              (pc_next)            
         );
 
