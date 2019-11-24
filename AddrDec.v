@@ -1,24 +1,4 @@
 `timescale 1ns / 1ps
-//////////////////////////////////////////////////////////////////////////////////
-// Company: 
-// Engineer: 
-// 
-// Create Date: 11/23/2019 12:55:49 PM
-// Design Name: 
-// Module Name: AddrDec
-// Project Name: 
-// Target Devices: 
-// Tool Versions: 
-// Description: 
-// 
-// Dependencies: 
-// 
-// Revision:
-// Revision 0.01 - File Created
-// Additional Comments:
-// 
-//////////////////////////////////////////////////////////////////////////////////
-
 
 module AddrDec(
     input wire [1:0]    A,
@@ -40,6 +20,7 @@ module AddrDec(
             2'b01: ctrl = 2'b0_0; //propegate gpl2 to RD
             2'b10: ctrl = 2'b0_1; //propegate gpO1 to RD
             2'b11: ctrl = 2'b1_0; //propegate gpO2 to RD
+            default: ctrl = 2'b0_0;
             endcase           
         end
         
