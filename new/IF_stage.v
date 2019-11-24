@@ -4,9 +4,9 @@ module IF_stage(
      input wire clk,
      input wire rst,
      input wire [31:0] pc_plus_4F,
-     input wire [31:0] InstrF,
+     input wire [31:0] instrF,
      output reg [31:0] pc_plus_4D,
-     output reg [31:0] InstrD
+     output reg [31:0] instrD
     );
     
     always@(posedge clk, posedge rst)begin
@@ -15,7 +15,7 @@ module IF_stage(
                 end
         else begin 
                     pc_plus_4D <= pc_plus_4F; 
-                    InstrD <= InstrF; 
+                    instrD <= instrF; 
              end
 
         
