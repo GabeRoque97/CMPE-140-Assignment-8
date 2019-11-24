@@ -12,7 +12,7 @@ module EXE_stage(
      input wire jal_selE,
      input wire we_regE,
      input wire [31:0] pc_plus_4E,
-     input wire [31:0] pc_plus_brE,
+     input wire [31:0] btaE,//pc_plus_brE was wrong naming
      input wire [31:0] alu_paE,
      input wire [63:0] alu_outE,
      input wire zeroE,
@@ -33,7 +33,7 @@ module EXE_stage(
           output reg jal_selM,
           output reg we_regM,
           output reg [31:0] pc_plus_4M,
-          output reg [31:0] pc_plus_brM,
+          output reg [31:0] btaM,//pc_plus_brM was wrong naming
           output reg [31:0] alu_paM,
           output reg [63:0] alu_outM,
           output reg zeroM,
