@@ -5,7 +5,7 @@ module mips_top (
         output wire        we_dm,
         output wire [31:0] pc_current,
         output wire [31:0] instr,
-        output wire [31:0] alu_out,
+        output wire [63:0] alu_out,
         output wire [31:0] wd_dm,
         output wire [31:0] rd_dm,
         output wire [31:0] rd3
