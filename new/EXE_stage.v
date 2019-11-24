@@ -54,17 +54,17 @@ module EXE_stage(
         branchM <= branchE;
         dm2regM <= dm2regE;
         jumpM <= jumpE;
-        we_dm <= we_dmE;
+        we_dmM <= we_dmE;
         jal_selM <= jal_selE;
         we_regM <= we_regE;
         
         //DP signals
         pc_plus_4M <= pc_plus_4E;
-        pc_plus_brM <= pc_plus_brE;
+        btaM <= btaE;
         alu_paM <= alu_paE;
         alu_outM <= alu_outE;
         zeroM <= zeroE;
-        wd_dm <= wd_dmE;
+        wd_dmM <= wd_dmE;
         shiftyM <= shiftyE;
         jtaM <= jtaE;
         rf_waM <= rf_waE;
