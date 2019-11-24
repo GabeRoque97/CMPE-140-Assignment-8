@@ -1,5 +1,3 @@
-`timescale 1ns / 1ps
-
 module IF_stage(
      input wire clk,
      input wire rst,
@@ -9,15 +7,17 @@ module IF_stage(
      output reg [31:0] instrD
     );
     
-    always@(posedge clk, posedge rst)begin
-        if(rst) begin pc_plus_4D <= 0;
-                      InstrD <=0; 
-                end
-        else begin 
-                    pc_plus_4D <= pc_plus_4F; 
-                    instrD <= instrF; 
-             end
-
-        
+always@(posedge clk, posedge rst)begin
+    if(rst)
+    begin
+        pc_plus_4D <= 0;
+        instrD <= 0; 
     end
+    else 
+    begin 
+        pc_plus_4D <= pc_plus_4F; 
+        instrD <= instrF; 
+    end       
+end
+    
 endmodule
