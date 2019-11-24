@@ -4,7 +4,7 @@ module MEM_stage(
     input wire clk,
     input wire multu_enM,
     input wire jr_selM,
-    input wire [2:0] super_selM,
+    input wire [1:0] super_selM,
     input wire dm2regM,
     input wire jumpM,
     input wire jal_selM,
@@ -21,7 +21,7 @@ module MEM_stage(
     
         output reg multu_enW,
         output reg jr_selW,
-        output reg [2:0] super_selW,
+        output reg [1:0] super_selW,
         output reg dm2regW,
         output reg jumpW,
         output reg jal_selW,
