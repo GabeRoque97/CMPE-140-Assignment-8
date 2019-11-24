@@ -1,24 +1,4 @@
 `timescale 1ns / 1ps
-//////////////////////////////////////////////////////////////////////////////////
-// Company: 
-// Engineer: 
-// 
-// Create Date: 11/23/2019 12:33:38 PM
-// Design Name: 
-// Module Name: GPIO
-// Project Name: 
-// Target Devices: 
-// Tool Versions: 
-// Description: 
-// 
-// Dependencies: 
-// 
-// Revision:
-// Revision 0.01 - File Created
-// Additional Comments:
-// 
-//////////////////////////////////////////////////////////////////////////////////
-
 
 module GPIO(
     input wire [1:0]    A,
@@ -58,8 +38,7 @@ module GPIO(
         .En (WE1),
         .D  (WD),
         .Clk    (Clk),
-        .Q  (gpOut1),
-        .Rst    (Rst)
+        .Q  (gpOut1)
     ); 
     
     mux4 #(32) MuxA (
