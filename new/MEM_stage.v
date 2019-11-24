@@ -1,24 +1,22 @@
-`timescale 1ns / 1ps
-
 module MEM_stage(
-    input wire clk,
-    input wire multu_enM,
-    input wire jr_selM,
-    input wire [1:0] super_selM,
-    input wire dm2regM,
-    input wire jumpM,
-    input wire jal_selM,
-    input wire we_regM,
-    input wire [31:0] pc_plus_4M,
-    input wire [31:0] alu_paM,
-    input wire [63:0] alu_outM,
-    input wire [31:0] rd_dmM,
-    input wire [31:0] shiftyM,
-    input wire [31:0] jtaM,
-    input wire [4:0] rf_waM,
-    input wire [31:0] HI_qM,
-    input wire [31:0] LO_qM, 
-    
+        input wire clk,
+        input wire multu_enM,
+        input wire jr_selM,
+        input wire [1:0] super_selM,
+        input wire dm2regM,
+        input wire jumpM,
+        input wire jal_selM,
+        input wire we_regM,
+        input wire [31:0] pc_plus_4M,
+        input wire [31:0] alu_paM,
+        input wire [63:0] alu_outM,
+        input wire [31:0] rd_dmM,
+        input wire [31:0] shiftyM,
+        input wire [31:0] jtaM,
+        input wire [4:0] rf_waM,
+        input wire [31:0] HI_qM,
+        input wire [31:0] LO_qM, 
+        
         output reg multu_enW,
         output reg jr_selW,
         output reg [1:0] super_selW,
@@ -35,10 +33,10 @@ module MEM_stage(
         output reg [4:0] rf_waW,
         output reg [31:0] HI_qW,
         output reg [31:0] LO_qW
-    
     );
     
-    always@(posedge clk)begin
+    always@(posedge clk)
+    begin
      //Control signals
            multu_enW <= multu_enM;
            jr_selW <= jr_selM;
