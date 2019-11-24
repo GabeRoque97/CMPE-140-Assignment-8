@@ -4,7 +4,7 @@ module EXE_stage(
      input wire clk,
      input wire multu_enE,
      input wire jr_selE,
-     input wire [2:0] super_selE,
+     input wire [1:0] super_selE,
      input wire branchE,
      input wire dm2regE,
      input wire jumpE,
@@ -25,7 +25,7 @@ module EXE_stage(
      
           output reg multu_enM,
           output reg jr_selM,
-          output reg [2:0] super_selM,
+          output reg [1:0] super_selM,
           output reg branchM,
           output reg dm2regM,
           output reg jumpM,
