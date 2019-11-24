@@ -37,14 +37,10 @@ module datapath (
     wire    jr_selD;
     wire    shiftD;
     wire    multu_enD;
-    wire    reg_dstD;
-    wire    super_selD;
     wire    we_regD;
     wire    alu_srcD;
     wire    we_dmD;
     wire    dm2regD;
-    wire    alu_ctrlD;
-    wire    reg_dstE;
     wire    shiftE;
     wire    zeroE;
     wire    alu_srcE;
@@ -72,10 +68,14 @@ module datapath (
     wire    dm2regW;
     wire    jal_selW;
     
+    wire [1:0]reg_dstD;
+    wire [1:0]reg_dstE;
+    wire [1:0]super_selD;
+    wire [1:0]super_selE;
+    wire [1:0]super_selM;
+    wire [1:0]super_selW;
+    wire [2:0]alu_ctrlD;
     wire [2:0]alu_ctrlE;
-    wire [2:0]super_selE;
-    wire [2:0]super_selM;
-    wire [2:0]super_selW;
     wire [4:0]rf_waE;
     wire [4:0]rf_waM;
     wire [4:0]rf_waW;
