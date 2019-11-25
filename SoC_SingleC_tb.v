@@ -4,12 +4,15 @@ module SoC_SingleC_tb;
     reg clk, rst;
     reg [31:0] gpIn1;
     wire [31:0] gpOut1, gpOut2;
-    
+    reg [31:0] ra3; 
+    wire [31:0] rd3; 
     wire dispSe, factErr;
     
     system DUT( 
         .clk (clk),
         .rst (rst),
+        .ra3(ra3),
+        .rd3(rd3),
         .gpI1 (gpIn1),
         .gpO1 (gpOut1),
         .gpO2 (gpOut2),
@@ -25,7 +28,7 @@ module SoC_SingleC_tb;
         rst = 1;
         tick;
         rst = 0;
-        
+        ra3 <= 'h09; 
         for(i = 0; i < 31; i = i + 1)begin
             gpIn1 = i; // Sel = 0 & n = 0 to 15
          

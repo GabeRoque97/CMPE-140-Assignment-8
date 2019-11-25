@@ -6,7 +6,7 @@ module imem (
     reg [31:0] rom [0:63];
 
     initial begin
-        $readmemh ("C:/Users/gabri/Desktop/CMPE 140/basys3_single_cycle_mips_validation/memfile.dat", rom);
+        $readmemh ("soctest.mem", rom);
     end
 
     assign y = rom[a];

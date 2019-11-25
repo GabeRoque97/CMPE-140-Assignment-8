@@ -1,12 +1,16 @@
 module system(
         input wire  clk,
         input wire rst,
+        
         input wire  [4:0]ra3,
+        output wire [31:0]rd3,
+        
         input wire  [31:0]gpI1,
         input wire  [31:0]gpI2,
-        output wire [31:0]rd3,
         output wire [31:0]gpO1,
         output wire [31:0]gpO2
+        
+        
     );
 
 wire WE, WE1, WE2, WEM;
@@ -24,7 +28,7 @@ imem imem(
         .a  (pc_current[7:2]),
         .y  (Instruction)
     );
-/*
+
 mips mips(
         .clk            (clk),
         .rst            (rst),
@@ -37,8 +41,8 @@ mips mips(
         .wd_dm          (WD),
         .rd3            (rd3)
     );
-*/   
-/*addr_dec addr_dec(
+   
+Address_Decoder addr_dec(
         .WE     (WE),
         .A      (A),
         .WE1    (WE1),
@@ -46,7 +50,7 @@ mips mips(
         .WEM    (WEM),
         .RdSel  (RdSel)
     );
-*/
+
 dmem dmem (
         .clk            (clk),
         .we             (WEM),
@@ -64,7 +68,7 @@ Factorial_Accelerator fact_top(
         .RD     (FactData)
     );
     
-/*gpio_top gpio_top(
+GPIO gpio_top(
         .clk    (clk),
         .rst    (rst),
         .A      (A[3:2]),
@@ -76,7 +80,7 @@ Factorial_Accelerator fact_top(
         .gpO1   (gpO1),
         .gpO2   (gpO2)
     );
-*/    
+    
 mux4 #(32) mux4(
         .sel    (RdSel),
         .a      (DMemData),
