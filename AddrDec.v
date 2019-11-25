@@ -36,7 +36,7 @@ module AddrDec(
         output wire [1:0]   Read_Sel
     );
     
-reg [1:0] ctrl;
+reg [3:0] ctrl;
 
 assign {WE2, WE1, Read_Sel} = ctrl;
 
