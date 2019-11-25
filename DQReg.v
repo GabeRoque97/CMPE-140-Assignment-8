@@ -1,20 +1,16 @@
-`timescale 1ns / 1ps
-
 module DQReg(
     input wire          En,
     input wire [31:0]   D,
-    input wire          Clk,
+    input wire          clk,
     output reg [31:0]   Q,
-    input wire Rst
+    input wire rst
     );
     
-    always @ (posedge Clk, Rst) begin
-        if(En)
-                 Q <= D;
-        else
-                 Q <= Q;
-        if(Rst)
-                 Q<=0;
-   end
+always @ (posedge clk, posedge rst)
+begin
+    if(rst) Q <= 0;
+    else if(En) Q <= D;
+    else Q <= Q;
+end
    
 endmodule
