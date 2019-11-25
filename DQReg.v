@@ -5,10 +5,10 @@ module DQReg(
     input wire [31:0]   D,
     input wire          Clk,
     output reg [31:0]   Q,
-    input Rst
+    input wire Rst
     );
     
-    always @ (posedge Clk, Rst) begin;
+    always @ (posedge Clk, Rst) begin
         if(En)
                  Q <= D;
         else
