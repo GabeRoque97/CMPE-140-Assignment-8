@@ -57,7 +57,7 @@ module mips_fpga (
     */
     system system(
             //.ra3            (),
-            .gpI1           ({27'b0,Sel,switches[4:0]}),
+            .gpI1           ({27'b0,Sel,switches[3:0]}),
             .gpI2           (gpO1_wire),
             //.rd3            (),
             .gpO1           (gpO1_wire),
