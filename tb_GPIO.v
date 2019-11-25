@@ -81,3 +81,74 @@ module tb_GPIO;
     end
 
 endmodule
+
+/*
+module tb_GPIO;
+reg     clk;
+reg     rst;
+reg     WE;
+reg     [1:0]  A;
+reg     [31:0] gpI1;
+reg     [31:0] gpI2;
+reg     [31:0] WD;
+wire    [31:0] RD;
+wire    [31:0] gpOut1;
+wire    [31:0] gpOut2;
+    
+    GPIO DUT (
+            .clk            (clk),
+            .rst            (rst),
+            .WE             (WE),
+            .A              (A),
+            .gpI1           (gpI1),
+            .gpI2           (gpI2),
+            .WD             (WD),
+            .RD             (RD),
+            .gpO1           (gpOut1),
+            .gpO2           (gpOut2)
+        );
+        
+    task tick; 
+    begin 
+        clk = 1'b0; #5;
+        clk = 1'b1; #5;
+    end
+    endtask
+
+    task reset;
+    begin 
+        rst = 1'b0; #5;
+        rst = 1'b1; #5;
+        rst = 1'b0;
+    end
+    endtask
+    
+    integer i;
+    initial
+    begin
+        reset;
+        
+        WE=1;
+        for(i = 0; i<4; i=i+1) begin
+              A=i;  
+              gpI1=i+1;
+              gpI2=i*3;
+              WD = i*4;
+             
+              tick;
+        end
+        WE=0;
+        
+        for(i = 0; i<4; i=i+1) begin
+              A=i;  
+              gpI1=i+1;
+              gpI2=i*3;
+              WD = i*5;
+             
+              tick;
+        end         
+    end
+
+endmodule
+
+*/
