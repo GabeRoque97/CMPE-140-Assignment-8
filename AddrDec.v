@@ -42,12 +42,21 @@ assign {WE2, WE1, Read_Sel} = ctrl;
 
 always @ (*) begin
     case (A)
-        2'b00: ctrl = 4'b0000; //propegate gpl1 to RD
-        2'b01: ctrl = 4'b0001; //propegate gpl2 to RD
-        2'b10: ctrl = 4'b0110; //propegate gpO1 to RD
-        2'b11: ctrl = 4'b1011; //propegate gpO2 to RD
+        2'b00: ctrl = 4'b0000; //propagate gpl1 to RD
+        2'b01: ctrl = 4'b0001; //propagate gpl2 to RD
+        2'b10: 
+            begin
+                if(WE) ctrl = 4'b0110; //propagate gpO1 to RD and write to gpO1 reg
+                else ctrl = 4'b0010; //propagate gpO1 to RD
+            end
+        2'b11:
+            begin
+                if(WE) ctrl = 4'b1011; //propagate gpO2 to RD and write to gpO2 reg
+                else ctrl = 4'b0011; //propagate gpO2 to RD
+            end
         default: ctrl = 4'b0000;
     endcase           
 end     
 endmodule
+
 */
