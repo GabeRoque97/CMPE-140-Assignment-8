@@ -19,6 +19,9 @@ module GPIO(
     wire WE1;
     wire [1:0] Read_Sel;
     
+    assign gpO1 = gpOut1;//error caught here
+    assign gpO2 = gpOut2;//error caught here
+    
     AddrDec AddrDec(
         .A  (A),
         .WE (WE),
@@ -31,22 +34,24 @@ module GPIO(
         .En (WE2),
         .D  (WD),
         .Clk    (Clk),
-        .Q  (gpOut2)
+        .Q  (gpOut2),
+        .Rst (Rst)
     );
     
     DQReg Reg1 (
         .En (WE1),
         .D  (WD),
         .Clk    (Clk),
-        .Q  (gpOut1)
+        .Q  (gpOut1),
+        .Rst (Rst)
     ); 
     
     mux4 #(32) MuxA (
         .sel    (Read_Sel),
         .a  (gpI1),
         .b  (gpI2),  
-        .c  (gpOut1),
-        .d  (gpOut2),
+        .c  (gpO1),
+        .d  (gpO2),
         .y  (RD)
     );
     
