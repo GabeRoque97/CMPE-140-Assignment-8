@@ -11,7 +11,7 @@ set_property -dict {PACKAGE_PIN V17 IOSTANDARD LVCMOS33} [get_ports {switches[0]
 set_property -dict {PACKAGE_PIN V16 IOSTANDARD LVCMOS33} [get_ports {switches[1]}];  # Switch 1
 set_property -dict {PACKAGE_PIN W16 IOSTANDARD LVCMOS33} [get_ports {switches[2]}];  # Switch 2
 set_property -dict {PACKAGE_PIN W17 IOSTANDARD LVCMOS33} [get_ports {switches[3]}];  # Switch 3
-set_property -dict {PACKAGE_PIN W15 IOSTANDARD LVCMOS33} [get_ports {switches[4]}];  # Switch 4
+set_property -dict {PACKAGE_PIN W15 IOSTANDARD LVCMOS33} [get_ports {Sel}];          # Switch 4
 
 #set_property -dict {PACKAGE_PIN V15 IOSTANDARD LVCMOS33} [get_ports {switches[5]}];  # Switch 5
 #set_property -dict {PACKAGE_PIN W14 IOSTANDARD LVCMOS33} [get_ports {switches[6]}];  # Switch 6
@@ -19,11 +19,10 @@ set_property -dict {PACKAGE_PIN W15 IOSTANDARD LVCMOS33} [get_ports {switches[4]
 #set_property -dict {PACKAGE_PIN V2  IOSTANDARD LVCMOS33} [get_ports {switches[8]}];  # Switch 8
 
 # LEDs
-set_property -dict {PACKAGE_PIN U16 IOSTANDARD LVCMOS33} [get_ports {factErr}];  # LED 0
-set_property -dict {PACKAGE_PIN E19 IOSTANDARD LVCMOS33} [get_ports {factErr}];  # LED 1
-set_property -dict {PACKAGE_PIN U19 IOSTANDARD LVCMOS33} [get_ports {factErr}];  # LED 2
-set_property -dict {PACKAGE_PIN V19 IOSTANDARD LVCMOS33} [get_ports {factErr}];  # LED 3
-
+set_property -dict {PACKAGE_PIN U16 IOSTANDARD LVCMOS33} [get_ports {factErr0}];  # LED 0
+set_property -dict {PACKAGE_PIN E19 IOSTANDARD LVCMOS33} [get_ports {factErr1}];  # LED 1
+set_property -dict {PACKAGE_PIN U19 IOSTANDARD LVCMOS33} [get_ports {factErr2}];  # LED 2
+set_property -dict {PACKAGE_PIN V19 IOSTANDARD LVCMOS33} [get_ports {factErr3}];  # LED 3
 set_property -dict {PACKAGE_PIN W18 IOSTANDARD LVCMOS33} [get_ports {dispSe}];  # LED 4
   
 # 7 segment display
