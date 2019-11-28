@@ -67,7 +67,7 @@ module mips_fpga (
     
           );
     
-    assign dispSe = gpO1_wire[1];
+    assign dispSe = gpO1_wire[4];
     assign factErr0 = gpO1_wire[0];
     assign factErr1 = gpO1_wire[0];
     assign factErr2 = gpO1_wire[0];
