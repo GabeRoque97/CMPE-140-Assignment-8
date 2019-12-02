@@ -19,7 +19,7 @@ module SoC_SingleC_tb;
         .gpI2 (gpOut1)
     );
     
-    assign dispSe = gpOut1[1];
+    assign dispSe = gpOut1[4];
     assign factErr = gpOut1[0];
     
     integer i,j;
