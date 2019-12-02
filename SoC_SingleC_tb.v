@@ -27,15 +27,9 @@ module SoC_SingleC_tb;
     initial begin
         rst = 1;
         tick;
-        rst = 0;
-        ra3 <= 'h09; 
-        for(i = 0; i < 31; i = i + 1)begin
-            gpIn1 = i; // Sel = 0 & n = 0 to 15
-         
-            for(j = 0; j < 19; j = j + 1)begin 
-                tick;//clock through the driver code
-            end
-        
+        rst = 0; 
+        for(i = 0; i < 65; i = i + 1)begin
+            tick;   
         end
     
     //while(factErr == 0) tick;
