@@ -19,8 +19,7 @@ module ID_stage(
         input wire [31:0] rd3D,
         input wire [31:0] instrD,
         input wire [31:0] sext_immD,
-        input wire [31:0] HI_qD,
-        input wire [31:0] LO_qD,
+        
         
           
         output reg multu_enE,
@@ -42,8 +41,13 @@ module ID_stage(
         output reg [31:0] rd3,
         output reg [31:0] instrE,
         output reg [31:0] sext_immE,
-        output reg [31:0] HI_qE,
-        output reg [31:0] LO_qE
+        
+        
+        input wire [4:0] ra1D,
+        input wire [4:0] ra2D,
+        
+        output reg [4:0] ra1E,
+        output reg [4:0] ra2E
            
     );
     
@@ -71,7 +75,9 @@ module ID_stage(
         rd3 <= rd3D;
         instrE <= instrD;
         sext_immE <= sext_immD;
-        HI_qE <= HI_qD;
-        LO_qE <= LO_qD;
+
+        
+         ra1E <= ra1D;
+        ra2E <= ra2D;  
     end
 endmodule

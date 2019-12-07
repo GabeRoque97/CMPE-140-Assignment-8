@@ -18,8 +18,8 @@ module EXE_stage(
         input wire [31:0] shiftyE,
         input wire [31:0] jtaE,
         input wire [4:0] rf_waE,
-        input wire [31:0] HI_qE,
-        input wire [31:0] LO_qE,
+        
+        
         
         output reg multu_enM,
         output reg jr_selM,
@@ -38,9 +38,9 @@ module EXE_stage(
         output reg [31:0] wd_dmM,
         output reg [31:0] shiftyM,
         output reg [31:0] jtaM,
-        output reg [4:0] rf_waM,
-        output reg [31:0] HI_qM,
-        output reg [31:0] LO_qM
+        output reg [4:0] rf_waM
+        
+       
 );
     
     always@(posedge clk)begin
@@ -65,7 +65,8 @@ module EXE_stage(
         shiftyM <= shiftyE;
         jtaM <= jtaE;
         rf_waM <= rf_waE;
-        HI_qM <= HI_qE;
-        LO_qM <= LO_qE;
+        
+        
+       
     end
 endmodule

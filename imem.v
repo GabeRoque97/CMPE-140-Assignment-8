@@ -6,7 +6,7 @@ module imem (
     reg [31:0] rom [0:63];
 
     initial begin
-        $readmemh ("fact_accel.mem", rom);
+        $readmemh ("pipelined_code.mem", rom);
     end
 
     assign y = rom[a];

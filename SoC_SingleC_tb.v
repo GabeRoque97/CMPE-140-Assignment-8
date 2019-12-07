@@ -6,7 +6,8 @@ module SoC_SingleC_tb;
     wire [31:0] gpOut1, gpOut2;
     reg [31:0] ra3; 
     wire [31:0] rd3; 
-    wire dispSe, factErr;
+    wire dispSe; 
+    wire factErr;
     
     system DUT( 
         .clk (clk),
@@ -20,20 +21,25 @@ module SoC_SingleC_tb;
     );
     
     assign dispSe = gpOut1[4];
-    assign factErr = gpOut1[0];
+    assign factErr = gpOut1[4];
+    
     
     integer i,j;
     
     initial begin
-        rst = 1;
-        tick;
-        rst = 0; 
-        for(i = 0; i < 65; i = i + 1)begin
-            tick;   
-        end
+        for(i = 0; i < 5; i = i + 1) begin
+        
+            rst = 1;
+            tick;
+            rst = 0; 
+        
+            gpIn1 <= i; 
+            
+            while(dispSe == 0) begin tick; end
+            
+            tick; 
     
-    //while(factErr == 0) tick;
-    
+        end    
     end
     
     task tick; 

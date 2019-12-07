@@ -12,7 +12,7 @@ module mips_top (
     );
 
     wire [31:0] DONT_USE;
-
+    
     mips mips (
             .clk            (clk),
             .rst            (rst),

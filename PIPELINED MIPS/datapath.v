@@ -11,6 +11,8 @@ module datapath (
         output wire [31:0] rd3
     );
 
+
+    
     wire [4:0]  rf_wa;
     wire        pc_src;
     wire [31:0] pc_pre;
@@ -26,7 +28,7 @@ module datapath (
     wire [31:0]HI_q;//output of HI reg
     wire [31:0]LO_q;//output of LO reg
     wire [31:0]shifty;//output of combinational shifter
-    wire [31:0]super_y;//output of super_mux
+    wire [31:0]super_y;//output of super_mux, originally in write back, moved to mem-stage
     wire [31:0]pc_jmp;//output of pc_jmp_mux
     wire        zero;
     
@@ -73,26 +75,30 @@ module datapath (
     wire [1:0]super_selD;
     wire [1:0]super_selE;
     wire [1:0]super_selM;
-    wire [1:0]super_selW;
     wire [2:0]alu_ctrlD;
     wire [2:0]alu_ctrlE;
     wire [4:0]rf_waE;
     wire [4:0]rf_waM;
     wire [4:0]rf_waW;
+    wire [31:0] rd1D; 
+    wire [31:0] rd2D; 
     wire [31:0]instrD;
     wire [31:0]alu_paD;
     wire [31:0]wd_dmD;
     wire [31:0]sext_immD;
     wire [31:0]rd3D;
-    wire [31:0]HI_qD;
-    wire [31:0]LO_qD;
+
     wire [31:0]btaE;
+    wire [31:0]alu_paEO;
+    wire [31:0]wd_dmEO;
     wire [31:0]alu_paE;
     wire [31:0]wd_dmE;
     wire [31:0]sext_immE;
-    wire [31:0]HI_qE;
-    wire [31:0]LO_qE;
+    wire [31:0] super_yW; 
+    
+    
     wire [31:0]shiftyE;
+    
     wire [31:0]jtaE;
     wire [31:0]instrE;
     wire [31:0]btaM;
@@ -105,11 +111,9 @@ module datapath (
     wire [31:0]alu_paW;
     wire [31:0]wd_rfW;
     wire [31:0]rd_dmW;
-    wire [31:0]HI_qW;
-    wire [31:0]LO_qW;
-    wire [31:0]shiftyW;
     
-    
+    wire [4:0] ra1D, ra2D; 
+    wire [4:0] ra1E, ra2E; 
     
     wire [31:0]pc_plus_4F;
     wire [31:0]pc_plus_4D;
@@ -120,6 +124,10 @@ module datapath (
     wire [63:0]alu_outW;
     //to here
     
+    
+    
+    assign ra1D = instrD[25:21]; 
+    assign ra2D = instrD[20:16]; 
     assign br_and_zeroM = branchM & zeroM;
     assign ba = {sext_immE[29:0], 2'b00};
     assign jtaE = {pc_plus_4E[31:28], instrE[25:0], 2'b00};
@@ -156,8 +164,6 @@ module datapath (
             rd3D,
             instrD,
             sext_immD,
-            HI_qD,
-            LO_qD,
             multu_enE,
             jr_selE,
             shiftE,
@@ -172,13 +178,16 @@ module datapath (
             jal_selE,
             we_regE,
             pc_plus_4E,
-            alu_paE,
-            wd_dmE,
+            alu_paEO,
+            wd_dmEO,
             rd3,
             instrE,
             sext_immE,
-            HI_qE,
-            LO_qE
+
+            ra1D, 
+            ra2D,
+            ra1E,
+            ra2E
         );
     
     // --- Instruction Execute Register --- //
@@ -202,8 +211,7 @@ module datapath (
             shiftyE,
             jtaE,
             rf_waE,
-            HI_qE,
-            LO_qE,
+
             multu_enM,
             jr_selM,
             super_selM,
@@ -221,9 +229,8 @@ module datapath (
             wd_dmM,
             shiftyM,
             jtaM,
-            rf_waM,
-            HI_qM,
-            LO_qM
+            rf_waM
+
         );
     
     // --- Instruction Memory Register --- //
@@ -231,7 +238,6 @@ module datapath (
             clk,
             multu_enM,
             jr_selM,
-            super_selM,
             dm2regM,
             jumpM,
             jal_selM,
@@ -240,14 +246,11 @@ module datapath (
             alu_paM,
             alu_outM,
             rd_dmM,
-            shiftyM,
             jtaM,
-            rf_waM,
-            HI_qM,
-            LO_qM, 
+            rf_waM, 
+            super_y,
             multu_enW,
             jr_selW,
-            super_selW,
             dm2regW,
             jumpW,
             jal_selW,
@@ -256,11 +259,9 @@ module datapath (
             alu_paW,
             alu_outW,
             rd_dmW,
-            shiftyW,
             jtaW,
             rf_waW,
-            HI_qW,
-            LO_qW
+            super_yW
         );
     
     // --- Control Unit --- //
@@ -342,8 +343,8 @@ module datapath (
             .ra3            (ra3),
             .wa             (rf_waW),
             .wd             (wd_rfW),
-            .rd1            (alu_paD),
-            .rd2            (wd_dmD),
+            .rd1            (rd1D),
+            .rd2            (rd2D),
             .rd3            (rd3D)
         );
 
@@ -371,17 +372,17 @@ module datapath (
     ENdreg LO_reg (//LO reg for multiplication
             .clk    (clk),
             .rst    (rst),
-            .EN     (multu_enW),
-            .d      (alu_outW[31:0]),
-            .q      (LO_qD)
+            .EN     (multu_enM),
+            .d      (alu_outM[31:0]),
+            .q      (LO_qM)
         );
     
     ENdreg HI_reg (//LO reg for multiplication
             .clk    (clk),
             .rst    (rst),
-            .EN     (multu_enW),
-            .d      (alu_outW[63:32]),
-            .q      (HI_qD)
+            .EN     (multu_enM),
+            .d      (alu_outM[63:32]),
+            .q      (HI_qM)
         );
 
     // --- MEM Logic --- //
@@ -393,16 +394,16 @@ module datapath (
         );
    
     mux4 #(32) super_mux (//for multiplexing input to regfile
-            .sel    (super_selW),
-            .a      (alu_outW[31:0]),
-            .b      (HI_qW),
-            .c      (LO_qW),
-            .d      (shiftyW),
+            .sel    (super_selM),
+            .a      (alu_outM[31:0]),
+            .b      (HI_qM),
+            .c      (LO_qM),
+            .d      (shiftyM),
             .y      (super_y)
         );
 
     mux2 #(32) jal_mux (//for multiplexing pc_plus4 to regfile
-            .a      (super_y),
+            .a      (super_yW),
             .b      (pc_plus_4W),
             .sel    (jal_selW),
             .y      (jal_out)
@@ -414,5 +415,29 @@ module datapath (
             .op1    (shiftE),
             .y      (shiftyE)
         );
+        
+    data_forwarding_unit DFU(
+        .ra1(ra1E), 
+        .ra2(ra2E), 
+        .wa_M(rf_waM), 
+        .wa_W(rf_waW),      
+        .rd1(alu_paEO), 
+        .rd2(wd_dmEO), 
+        .wd_rfM(super_y), 
+        .wd_rfW(wd_rfW), 
+        .data_a(alu_paE), 
+        .data_b(wd_dmE)     
+    ); 
+    
+    write_to_decode_forwarding WtDF(
+        .ra1(ra1D), 
+        .ra2(ra2D), 
+        .wa(rf_waW),
+        .rd1(rd1D),
+        .rd2(rd2D),
+        .wd_rf(wd_rfW),
+        .data_a(alu_paD),
+        .data_b(wd_dmD)
+    ); 
 
 endmodule
