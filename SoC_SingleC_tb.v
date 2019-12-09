@@ -4,9 +4,9 @@ module SoC_SingleC_tb;
     reg clk, rst;
     reg [3:0] switches;
     reg       Sel;
-    reg [31:0] ra3;
+   // reg [31:0] ra3;
     wire [31:0] gpOut1, gpOut2;
-    wire [31:0] rd3;
+   // wire [31:0] rd3;
     wire dispSe, factErr;
     wire [31:0]   gpIn1;
     
@@ -21,25 +21,35 @@ module SoC_SingleC_tb;
         .gpI1 (gpIn1),
         .gpO1 (gpOut1),
         .gpO2 (gpOut2),
-        .gpI2 (gpOut1),
-        .ra3    (ra3),
-        .rd3    (rd3)
+        .gpI2 (gpOut1)
+       // .ra3    (ra3),
+       // .rd3    (rd3)
     );
     
    //if(DUT.fact_top.FA.done == 1)
    
     
-    integer i,j,k,done_check,error_check, jump_check;
+    integer i,j,k,done_check,error_check, jump_check,write_check;
     
     initial begin
         done_check = 0;
         error_check = 0;
         jump_check = 0;
+        write_check = 0;
         rst = 1;
         tick;
         rst = 0;
-        tick;
-        tick;
+        /*
+        while(write_check != 16)begin
+             tick;
+             rst = 0;
+             write_check = DUT.mips.dp.MEM_stage.we_regW;
+                            
+        end
+        
+       
+       tick;
+     */
        
         for(j = 0; j < 2; j = j + 1)begin   
             Sel = j;    
@@ -61,7 +71,7 @@ module SoC_SingleC_tb;
                */
                 while(jump_check == 0)begin
                     tick;
-                    jump_check = DUT.mips.cu.md.jump;
+                    jump_check = DUT.mips.dp.MEM_stage.jumpW;
                     
                 end
                 jump_check = 0;
