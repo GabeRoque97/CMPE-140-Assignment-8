@@ -69,8 +69,8 @@ Factorial_Accelerator fact_top(
     );
     
 GPIO gpio_top(
-        .clk    (clk),
-        .rst    (rst),
+        .Clk    (clk),
+        .Rst    (rst),
         .A      (A[3:2]),
         .WE     (WE2),
         .WD     (WD),

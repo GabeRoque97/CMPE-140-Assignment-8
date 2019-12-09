@@ -6,7 +6,7 @@ module imem (
     reg [31:0] rom [0:63];
 
     initial begin
-        $readmemh ("data_forwarding.mem", rom);
+        $readmemh ("fact_accel.mem", rom);
     end
 
     assign y = rom[a];

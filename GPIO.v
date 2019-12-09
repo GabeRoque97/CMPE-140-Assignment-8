@@ -33,17 +33,17 @@ module GPIO(
     DQReg Reg2 (
         .En (WE2),
         .D  (WD),
-        .Clk    (Clk),
+        .clk    (Clk),
         .Q  (gpOut2),
-        .Rst (Rst)
+        .rst (Rst)
     );
     
     DQReg Reg1 (
         .En (WE1),
         .D  (WD),
-        .Clk    (Clk),
+        .clk    (Clk),
         .Q  (gpOut1),
-        .Rst (Rst)
+        .rst (Rst)
     ); 
     
     mux4 #(32) MuxA (
