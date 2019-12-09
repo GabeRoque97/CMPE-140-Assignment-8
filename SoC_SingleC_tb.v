@@ -29,9 +29,11 @@ module SoC_SingleC_tb;
    //if(DUT.fact_top.FA.done == 1)
    
     
-    integer i,j,k;
+    integer i,j,k,done_check,error_check, jump_check;
     
     initial begin
+        done_check = 0;
+        error_check = 0;
         rst = 1;
         tick;
         rst = 0;
@@ -40,16 +42,33 @@ module SoC_SingleC_tb;
        
         for(j = 0; j < 2; j = j + 1)begin   
             Sel = j;    
-            
             for(i = 0; i < 16; i = i + 1)begin
-                
+            
                 switches = i;
-         
-                 for(k = 0; k < 40; k = k + 1)begin 
-                    tick;//clock through the driver code
+                 //for(k = 0; k < 40; k = k + 1)begin 
+                 //if(i > 12) error_check = 1;
+                
+                 
+               /* while(done_check == 0 && error_check == 0)begin 
+                    tick;//clock through Factorial calculation
+                    done_check = DUT.fact_top.FA.done; 
+                    error_check = DUT.fact_top.FA.Error; 
                 end
-        
+                
+                done_check = 0;
+                error_check = 0;
+               */
+                while(jump_check == 0)begin
+                    tick;
+                    jump_check = DUT.mips.cu.md.jump;
+                    
+                end
+                jump_check = 0;
+              
+              
             end
+           
+          
         end
     //while(factErr == 0) tick;
     
