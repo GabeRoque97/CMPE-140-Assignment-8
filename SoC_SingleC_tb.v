@@ -34,6 +34,7 @@ module SoC_SingleC_tb;
     initial begin
         done_check = 0;
         error_check = 0;
+        jump_check = 0;
         rst = 1;
         tick;
         rst = 0;
