@@ -16,9 +16,9 @@ module hex_to_7seg (
                4'h8: s = 8'b10000000;
                4'h9: s = 8'b10010000;
                4'hA: s = 8'b10001000;
-               4'hB: s = 8'b10000000;//should change this to a lower case B
+               4'hB: s = 8'b00000000;//should change this to a lower case B
                4'hC: s = 8'b11000110;
-               4'hD: s = 8'b11000000;
+               4'hD: s = 8'b01000000;
                4'hE: s = 8'b10000110;
                4'hF: s = 8'b10001110;
             default: s = 8'b01111111;

@@ -1,0 +1,82 @@
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+--------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
+| Date         : Mon Dec  9 13:20:38 2019
+| Host         : Emil-GamingPc running 64-bit major release  (build 9200)
+| Command      : report_control_sets -verbose -file mips_fpga_control_sets_placed.rpt
+| Design       : mips_fpga
+| Device       : xc7a35ti
+--------------------------------------------------------------------------------------
+
+Control Set Information
+
+Table of Contents
+-----------------
+1. Summary
+2. Histogram
+3. Flip-Flop Distribution
+4. Detailed Control Set Information
+
+1. Summary
+----------
+
++----------------------------------------------------------+-------+
+|                          Status                          | Count |
++----------------------------------------------------------+-------+
+| Number of unique control sets                            |    16 |
+| Unused register locations in slices containing registers |    45 |
++----------------------------------------------------------+-------+
+
+
+2. Histogram
+------------
+
++--------+--------------+
+| Fanout | Control Sets |
++--------+--------------+
+|      2 |            2 |
+|      4 |            2 |
+|    16+ |           12 |
++--------+--------------+
+
+
+3. Flip-Flop Distribution
+-------------------------
+
++--------------+-----------------------+------------------------+-----------------+--------------+
+| Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
++--------------+-----------------------+------------------------+-----------------+--------------+
+| No           | No                    | No                     |             421 |          163 |
+| No           | No                    | Yes                    |              36 |           11 |
+| No           | Yes                   | No                     |              33 |            9 |
+| Yes          | No                    | No                     |              32 |            8 |
+| Yes          | No                    | Yes                    |             137 |           34 |
+| Yes          | Yes                   | No                     |               0 |            0 |
++--------------+-----------------------+------------------------+-----------------+--------------+
+
+
+4. Detailed Control Set Information
+-----------------------------------
+
++-----------------------------------------------+-----------------------------------------------+-------------------------------------+------------------+----------------+
+|                  Clock Signal                 |                 Enable Signal                 |           Set/Reset Signal          | Slice Load Count | Bel Load Count |
++-----------------------------------------------+-----------------------------------------------+-------------------------------------+------------------+----------------+
+|  system/mips/dp/EXE_stage/E[0]                |                                               |                                     |                1 |              2 |
+|  clk_pb_BUFG                                  |                                               | system/mips/dp/EXE_stage/GoPulseCmb |                2 |              2 |
+|  system/fact_top/FA/CU/Load_count_reg_i_2_n_1 |                                               |                                     |                1 |              4 |
+|  clk_pb_BUFG                                  | system/mips/dp/EXE_stage/alu_outM_reg[3]_0[0] | rst_IBUF                            |                2 |              4 |
+|  clk_gen/clk_5KHz_reg_0                       |                                               |                                     |                5 |             19 |
+|  clk_pb_BUFG                                  | system/gpio_top/AddrDec/Q[1]                  | rst_IBUF                            |                8 |             32 |
+|  clk_pb_BUFG                                  | system/fact_top/FA/CU/internal_2              |                                     |                8 |             32 |
+|  clk_pb_BUFG                                  | system/fact_top/FA/CU/internal_2              | rst_IBUF                            |                6 |             32 |
+|  clk_pb_BUFG                                  | system/fact_top/FA/CU/E[0]                    | rst_IBUF                            |                7 |             32 |
+|  clk_pb_BUFG                                  | system/mips/dp/EXE_stage/we                   |                                     |                8 |             32 |
+|  clk_IBUF_BUFG                                |                                               | rst_IBUF                            |                9 |             33 |
+|  clk_pb_BUFG                                  |                                               | rst_IBUF                            |                9 |             34 |
+|  clk_pb_BUFG                                  | system/gpio_top/AddrDec/Q[0]                  | rst_IBUF                            |               11 |             37 |
+|  n_0_612_BUFG                                 |                                               |                                     |               34 |             64 |
+|  clk_pb_BUFG                                  | system/mips/dp/MEM_stage/we_regW              |                                     |               12 |             96 |
+|  clk_pb_BUFG                                  |                                               |                                     |              122 |            336 |
++-----------------------------------------------+-----------------------------------------------+-------------------------------------+------------------+----------------+
+
+

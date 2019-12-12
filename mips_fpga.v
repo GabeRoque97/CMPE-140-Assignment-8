@@ -6,7 +6,7 @@ module mips_fpga (
         input wire        Sel,
         output wire [3:0] LEDSEL,
         output wire [7:0] LEDOUT,
-        output wire       dispSe,
+        output wire       dispSel,
         output wire       factErr0,
         output wire       factErr1,
         output wire       factErr2,
@@ -67,14 +67,14 @@ module mips_fpga (
     
           );
     
-    assign dispSe = gpO1_wire[4];
+    assign dispSel = gpO1_wire[4];
     assign factErr0 = gpO1_wire[0];
     assign factErr1 = gpO1_wire[0];
     assign factErr2 = gpO1_wire[0];
     assign factErr3 = gpO1_wire[0];
     
     mux2 #(16) displaymux (
-            .sel                (dispSe),
+            .sel                (gpO1_wire[4]),
             .a                  (system_out[15:0]),
             .b                  (system_out[31:16]),
             .y                  (reg_hex)

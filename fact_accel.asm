@@ -16,13 +16,20 @@ poll: 	lw $t5, 0x0808($0)
 	nop
 	nop
 	nop
-	nop
+	
+	srl $t5, $t5, 1
+	and $t5, $t5, $t1
+	and $t3, $t2, $t4
+	or $t3, $t3, $t5
 	
 	lw $t5 0x080C($0)
 	nop
+	sw $t3, 0x0908($0) 
+	nop
+	sw $t5, 0x090C($0) 
+	nop
 	
 done: 	j fact
-	nop
 	nop
 	nop
 	nop

@@ -1,0 +1,941 @@
+
+*** Running vivado
+    with args -log mips_fpga.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source mips_fpga.tcl
+
+
+****** Vivado v2018.3 (64-bit)
+  **** SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
+  **** IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+    ** Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+
+source mips_fpga.tcl -notrace
+Command: synth_design -top mips_fpga -part xc7a35ticpg236-1L
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a35ti'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35ti'
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 14492 
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:03 . Memory (MB): peak = 341.473 ; gain = 66.516
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'mips_fpga' [C:/Users/Work/Documents/SJSU/Fall 2019/CMPE 140/CMPE-140-Assignment-8/mips_fpga.v:1]
+INFO: [Synth 8-6157] synthesizing module 'clk_gen' [C:/Users/Work/Documents/SJSU/Fall 2019/CMPE 140/CMPE-140-Assignment-8/clk_gen.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'clk_gen' (1#1) [C:/Users/Work/Documents/SJSU/Fall 2019/CMPE 140/CMPE-140-Assignment-8/clk_gen.v:1]
+INFO: [Synth 8-6157] synthesizing module 'button_debouncer' [C:/Users/Work/Documents/SJSU/Fall 2019/CMPE 140/CMPE-140-Assignment-8/button_debouncer.v:1]
+	Parameter depth bound to: 16 - type: integer 
+	Parameter history_max bound to: 65535 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'button_debouncer' (2#1) [C:/Users/Work/Documents/SJSU/Fall 2019/CMPE 140/CMPE-140-Assignment-8/button_debouncer.v:1]
+INFO: [Synth 8-6157] synthesizing module 'system' [C:/Users/Work/Documents/SJSU/Fall 2019/CMPE 140/CMPE-140-Assignment-8/system.v:1]
+INFO: [Synth 8-6157] synthesizing module 'imem' [C:/Users/Work/Documents/SJSU/Fall 2019/CMPE 140/CMPE-140-Assignment-8/imem.v:1]
+INFO: [Synth 8-3876] $readmem data file 'fact_accel.mem' is read successfully [C:/Users/Work/Documents/SJSU/Fall 2019/CMPE 140/CMPE-140-Assignment-8/imem.v:9]
+INFO: [Synth 8-6155] done synthesizing module 'imem' (3#1) [C:/Users/Work/Documents/SJSU/Fall 2019/CMPE 140/CMPE-140-Assignment-8/imem.v:1]
+INFO: [Synth 8-6157] synthesizing module 'mips' [C:/Users/Work/Documents/SJSU/Fall 2019/CMPE 140/CMPE-140-Assignment-8/PIPELINED MIPS/mips.v:1]
+INFO: [Synth 8-6157] synthesizing module 'datapath' [C:/Users/Work/Documents/SJSU/Fall 2019/CMPE 140/CMPE-140-Assignment-8/PIPELINED MIPS/datapath.v:1]
+INFO: [Synth 8-6157] synthesizing module 'IF_stage' [C:/Users/Work/Documents/SJSU/Fall 2019/CMPE 140/CMPE-140-Assignment-8/new/IF_stage.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'IF_stage' (4#1) [C:/Users/Work/Documents/SJSU/Fall 2019/CMPE 140/CMPE-140-Assignment-8/new/IF_stage.v:1]
+INFO: [Synth 8-6157] synthesizing module 'ID_stage' [C:/Users/Work/Documents/SJSU/Fall 2019/CMPE 140/CMPE-140-Assignment-8/new/ID_stage.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'ID_stage' (5#1) [C:/Users/Work/Documents/SJSU/Fall 2019/CMPE 140/CMPE-140-Assignment-8/new/ID_stage.v:1]
+INFO: [Synth 8-6157] synthesizing module 'EXE_stage' [C:/Users/Work/Documents/SJSU/Fall 2019/CMPE 140/CMPE-140-Assignment-8/new/EXE_stage.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'EXE_stage' (6#1) [C:/Users/Work/Documents/SJSU/Fall 2019/CMPE 140/CMPE-140-Assignment-8/new/EXE_stage.v:1]
+INFO: [Synth 8-6157] synthesizing module 'MEM_stage' [C:/Users/Work/Documents/SJSU/Fall 2019/CMPE 140/CMPE-140-Assignment-8/new/MEM_stage.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'MEM_stage' (7#1) [C:/Users/Work/Documents/SJSU/Fall 2019/CMPE 140/CMPE-140-Assignment-8/new/MEM_stage.v:1]
+INFO: [Synth 8-6157] synthesizing module 'controlunit' [C:/Users/Work/Documents/SJSU/Fall 2019/CMPE 140/CMPE-140-Assignment-8/control_unit/controlunit.v:1]
+INFO: [Synth 8-6157] synthesizing module 'maindec' [C:/Users/Work/Documents/SJSU/Fall 2019/CMPE 140/CMPE-140-Assignment-8/control_unit/maindec.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'maindec' (8#1) [C:/Users/Work/Documents/SJSU/Fall 2019/CMPE 140/CMPE-140-Assignment-8/control_unit/maindec.v:1]
+INFO: [Synth 8-6157] synthesizing module 'auxdec' [C:/Users/Work/Documents/SJSU/Fall 2019/CMPE 140/CMPE-140-Assignment-8/control_unit/auxdec.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'auxdec' (9#1) [C:/Users/Work/Documents/SJSU/Fall 2019/CMPE 140/CMPE-140-Assignment-8/control_unit/auxdec.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'controlunit' (10#1) [C:/Users/Work/Documents/SJSU/Fall 2019/CMPE 140/CMPE-140-Assignment-8/control_unit/controlunit.v:1]
+INFO: [Synth 8-6157] synthesizing module 'dreg' [C:/Users/Work/Documents/SJSU/Fall 2019/CMPE 140/CMPE-140-Assignment-8/datapath/dreg.v:1]
+	Parameter WIDTH bound to: 32 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'dreg' (11#1) [C:/Users/Work/Documents/SJSU/Fall 2019/CMPE 140/CMPE-140-Assignment-8/datapath/dreg.v:1]
+INFO: [Synth 8-6157] synthesizing module 'adder' [C:/Users/Work/Documents/SJSU/Fall 2019/CMPE 140/CMPE-140-Assignment-8/datapath/adder.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'adder' (12#1) [C:/Users/Work/Documents/SJSU/Fall 2019/CMPE 140/CMPE-140-Assignment-8/datapath/adder.v:1]
+INFO: [Synth 8-6157] synthesizing module 'mux2' [C:/Users/Work/Documents/SJSU/Fall 2019/CMPE 140/CMPE-140-Assignment-8/mux2.v:1]
+	Parameter WIDTH bound to: 32 - type: integer 
+WARNING: [Synth 8-311] ignoring non-constant assignment in initial block [C:/Users/Work/Documents/SJSU/Fall 2019/CMPE 140/CMPE-140-Assignment-8/mux2.v:10]
+INFO: [Synth 8-226] default block is never used [C:/Users/Work/Documents/SJSU/Fall 2019/CMPE 140/CMPE-140-Assignment-8/mux2.v:14]
+INFO: [Synth 8-6155] done synthesizing module 'mux2' (13#1) [C:/Users/Work/Documents/SJSU/Fall 2019/CMPE 140/CMPE-140-Assignment-8/mux2.v:1]
+INFO: [Synth 8-6157] synthesizing module 'mux4' [C:/Users/Work/Documents/SJSU/Fall 2019/CMPE 140/CMPE-140-Assignment-8/datapath/mux4.v:1]
+	Parameter WIDTH bound to: 5 - type: integer 
+INFO: [Synth 8-226] default block is never used [C:/Users/Work/Documents/SJSU/Fall 2019/CMPE 140/CMPE-140-Assignment-8/datapath/mux4.v:12]
+INFO: [Synth 8-6155] done synthesizing module 'mux4' (14#1) [C:/Users/Work/Documents/SJSU/Fall 2019/CMPE 140/CMPE-140-Assignment-8/datapath/mux4.v:1]
+INFO: [Synth 8-6157] synthesizing module 'regfile' [C:/Users/Work/Documents/SJSU/Fall 2019/CMPE 140/CMPE-140-Assignment-8/datapath/regfile.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'regfile' (15#1) [C:/Users/Work/Documents/SJSU/Fall 2019/CMPE 140/CMPE-140-Assignment-8/datapath/regfile.v:1]
+INFO: [Synth 8-6157] synthesizing module 'signext' [C:/Users/Work/Documents/SJSU/Fall 2019/CMPE 140/CMPE-140-Assignment-8/datapath/signext.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'signext' (16#1) [C:/Users/Work/Documents/SJSU/Fall 2019/CMPE 140/CMPE-140-Assignment-8/datapath/signext.v:1]
+INFO: [Synth 8-6157] synthesizing module 'alu' [C:/Users/Work/Documents/SJSU/Fall 2019/CMPE 140/CMPE-140-Assignment-8/datapath/alu.v:1]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/Work/Documents/SJSU/Fall 2019/CMPE 140/CMPE-140-Assignment-8/datapath/alu.v:12]
+INFO: [Synth 8-6155] done synthesizing module 'alu' (17#1) [C:/Users/Work/Documents/SJSU/Fall 2019/CMPE 140/CMPE-140-Assignment-8/datapath/alu.v:1]
+INFO: [Synth 8-6157] synthesizing module 'ENdreg' [C:/Users/Work/Documents/SJSU/Fall 2019/CMPE 140/CMPE-140-Assignment-8/datapath/ENdreg.v:1]
+	Parameter WIDTH bound to: 32 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'ENdreg' (18#1) [C:/Users/Work/Documents/SJSU/Fall 2019/CMPE 140/CMPE-140-Assignment-8/datapath/ENdreg.v:1]
+INFO: [Synth 8-6157] synthesizing module 'mux4__parameterized0' [C:/Users/Work/Documents/SJSU/Fall 2019/CMPE 140/CMPE-140-Assignment-8/datapath/mux4.v:1]
+	Parameter WIDTH bound to: 32 - type: integer 
+INFO: [Synth 8-226] default block is never used [C:/Users/Work/Documents/SJSU/Fall 2019/CMPE 140/CMPE-140-Assignment-8/datapath/mux4.v:12]
+INFO: [Synth 8-6155] done synthesizing module 'mux4__parameterized0' (18#1) [C:/Users/Work/Documents/SJSU/Fall 2019/CMPE 140/CMPE-140-Assignment-8/datapath/mux4.v:1]
+INFO: [Synth 8-6157] synthesizing module 'shifter' [C:/Users/Work/Documents/SJSU/Fall 2019/CMPE 140/CMPE-140-Assignment-8/datapath/shifter.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'shifter' (19#1) [C:/Users/Work/Documents/SJSU/Fall 2019/CMPE 140/CMPE-140-Assignment-8/datapath/shifter.v:1]
+INFO: [Synth 8-6157] synthesizing module 'data_forwarding_unit' [D:/CmpE_140_Projects/project_8/pipelined_processor.srcs/sources_1/new/reg_a_comp.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'data_forwarding_unit' (20#1) [D:/CmpE_140_Projects/project_8/pipelined_processor.srcs/sources_1/new/reg_a_comp.v:3]
+INFO: [Synth 8-6157] synthesizing module 'write_to_decode_forwarding' [D:/CmpE_140_Projects/project_8/pipelined_processor.srcs/sources_1/new/reg_a_comp.v:33]
+INFO: [Synth 8-6155] done synthesizing module 'write_to_decode_forwarding' (21#1) [D:/CmpE_140_Projects/project_8/pipelined_processor.srcs/sources_1/new/reg_a_comp.v:33]
+INFO: [Synth 8-6155] done synthesizing module 'datapath' (22#1) [C:/Users/Work/Documents/SJSU/Fall 2019/CMPE 140/CMPE-140-Assignment-8/PIPELINED MIPS/datapath.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'mips' (23#1) [C:/Users/Work/Documents/SJSU/Fall 2019/CMPE 140/CMPE-140-Assignment-8/PIPELINED MIPS/mips.v:1]
+WARNING: [Synth 8-689] width (32) of port connection 'alu_out' does not match port width (64) of module 'mips' [C:/Users/Work/Documents/SJSU/Fall 2019/CMPE 140/CMPE-140-Assignment-8/system.v:40]
+INFO: [Synth 8-6157] synthesizing module 'Address_Decoder' [C:/Users/Work/Documents/SJSU/Fall 2019/CMPE 140/CMPE-140-Assignment-8/Address_Decoder/Address_Decoder.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'Address_Decoder' (24#1) [C:/Users/Work/Documents/SJSU/Fall 2019/CMPE 140/CMPE-140-Assignment-8/Address_Decoder/Address_Decoder.v:23]
+INFO: [Synth 8-6157] synthesizing module 'dmem' [C:/Users/Work/Documents/SJSU/Fall 2019/CMPE 140/CMPE-140-Assignment-8/dmem.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'dmem' (25#1) [C:/Users/Work/Documents/SJSU/Fall 2019/CMPE 140/CMPE-140-Assignment-8/dmem.v:1]
+INFO: [Synth 8-6157] synthesizing module 'Factorial_Accelerator' [C:/Users/Work/Documents/SJSU/Fall 2019/CMPE 140/CMPE-140-Assignment-8/Factorial_Accelerator/Factorial_Accelerator.v:23]
+INFO: [Synth 8-6157] synthesizing module 'Factorial_Address_Decoder' [C:/Users/Work/Documents/SJSU/Fall 2019/CMPE 140/CMPE-140-Assignment-8/Factorial_Accelerator/Acccelerator_Blocks.v:22]
+INFO: [Synth 8-6155] done synthesizing module 'Factorial_Address_Decoder' (26#1) [C:/Users/Work/Documents/SJSU/Fall 2019/CMPE 140/CMPE-140-Assignment-8/Factorial_Accelerator/Acccelerator_Blocks.v:22]
+INFO: [Synth 8-6157] synthesizing module 'f_register' [C:/Users/Work/Documents/SJSU/Fall 2019/CMPE 140/CMPE-140-Assignment-8/Factorial_Accelerator/Acccelerator_Blocks.v:50]
+	Parameter width bound to: 1 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'f_register' (27#1) [C:/Users/Work/Documents/SJSU/Fall 2019/CMPE 140/CMPE-140-Assignment-8/Factorial_Accelerator/Acccelerator_Blocks.v:50]
+INFO: [Synth 8-6157] synthesizing module 'f_register__parameterized0' [C:/Users/Work/Documents/SJSU/Fall 2019/CMPE 140/CMPE-140-Assignment-8/Factorial_Accelerator/Acccelerator_Blocks.v:50]
+	Parameter width bound to: 4 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'f_register__parameterized0' (27#1) [C:/Users/Work/Documents/SJSU/Fall 2019/CMPE 140/CMPE-140-Assignment-8/Factorial_Accelerator/Acccelerator_Blocks.v:50]
+INFO: [Synth 8-6157] synthesizing module 'f_register__parameterized1' [C:/Users/Work/Documents/SJSU/Fall 2019/CMPE 140/CMPE-140-Assignment-8/Factorial_Accelerator/Acccelerator_Blocks.v:50]
+	Parameter width bound to: 32 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'f_register__parameterized1' (27#1) [C:/Users/Work/Documents/SJSU/Fall 2019/CMPE 140/CMPE-140-Assignment-8/Factorial_Accelerator/Acccelerator_Blocks.v:50]
+INFO: [Synth 8-6157] synthesizing module 'Factorial' [C:/Users/Work/Documents/SJSU/Fall 2019/CMPE 140/CMPE-140-Assignment-8/Factorial_Accelerator/Factorial.v:23]
+INFO: [Synth 8-6157] synthesizing module 'Factorial_CU' [C:/Users/Work/Documents/SJSU/Fall 2019/CMPE 140/CMPE-140-Assignment-8/Factorial_Accelerator/Factorial_CU.v:23]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/Work/Documents/SJSU/Fall 2019/CMPE 140/CMPE-140-Assignment-8/Factorial_Accelerator/Factorial_CU.v:60]
+INFO: [Synth 8-6155] done synthesizing module 'Factorial_CU' (28#1) [C:/Users/Work/Documents/SJSU/Fall 2019/CMPE 140/CMPE-140-Assignment-8/Factorial_Accelerator/Factorial_CU.v:23]
+INFO: [Synth 8-6157] synthesizing module 'Factorial_DP' [C:/Users/Work/Documents/SJSU/Fall 2019/CMPE 140/CMPE-140-Assignment-8/Factorial_Accelerator/Factorial_DP.v:23]
+INFO: [Synth 8-6157] synthesizing module 'Decrementer' [C:/Users/Work/Documents/SJSU/Fall 2019/CMPE 140/CMPE-140-Assignment-8/Factorial_Accelerator/Factorial_Blocks.v:70]
+INFO: [Synth 8-6155] done synthesizing module 'Decrementer' (29#1) [C:/Users/Work/Documents/SJSU/Fall 2019/CMPE 140/CMPE-140-Assignment-8/Factorial_Accelerator/Factorial_Blocks.v:70]
+INFO: [Synth 8-6157] synthesizing module 'GT_CMP' [C:/Users/Work/Documents/SJSU/Fall 2019/CMPE 140/CMPE-140-Assignment-8/Factorial_Accelerator/Factorial_Blocks.v:35]
+INFO: [Synth 8-6155] done synthesizing module 'GT_CMP' (30#1) [C:/Users/Work/Documents/SJSU/Fall 2019/CMPE 140/CMPE-140-Assignment-8/Factorial_Accelerator/Factorial_Blocks.v:35]
+INFO: [Synth 8-6157] synthesizing module 'Mux' [C:/Users/Work/Documents/SJSU/Fall 2019/CMPE 140/CMPE-140-Assignment-8/Factorial_Accelerator/Factorial_Blocks.v:24]
+INFO: [Synth 8-6155] done synthesizing module 'Mux' (31#1) [C:/Users/Work/Documents/SJSU/Fall 2019/CMPE 140/CMPE-140-Assignment-8/Factorial_Accelerator/Factorial_Blocks.v:24]
+INFO: [Synth 8-6157] synthesizing module 'Load_Reg' [C:/Users/Work/Documents/SJSU/Fall 2019/CMPE 140/CMPE-140-Assignment-8/Factorial_Accelerator/Factorial_Blocks.v:45]
+INFO: [Synth 8-6155] done synthesizing module 'Load_Reg' (32#1) [C:/Users/Work/Documents/SJSU/Fall 2019/CMPE 140/CMPE-140-Assignment-8/Factorial_Accelerator/Factorial_Blocks.v:45]
+INFO: [Synth 8-6157] synthesizing module 'MUL' [C:/Users/Work/Documents/SJSU/Fall 2019/CMPE 140/CMPE-140-Assignment-8/Factorial_Accelerator/Factorial_Blocks.v:60]
+INFO: [Synth 8-6155] done synthesizing module 'MUL' (33#1) [C:/Users/Work/Documents/SJSU/Fall 2019/CMPE 140/CMPE-140-Assignment-8/Factorial_Accelerator/Factorial_Blocks.v:60]
+INFO: [Synth 8-6155] done synthesizing module 'Factorial_DP' (34#1) [C:/Users/Work/Documents/SJSU/Fall 2019/CMPE 140/CMPE-140-Assignment-8/Factorial_Accelerator/Factorial_DP.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'Factorial' (35#1) [C:/Users/Work/Documents/SJSU/Fall 2019/CMPE 140/CMPE-140-Assignment-8/Factorial_Accelerator/Factorial.v:23]
+INFO: [Synth 8-6157] synthesizing module 'set_reset_register' [C:/Users/Work/Documents/SJSU/Fall 2019/CMPE 140/CMPE-140-Assignment-8/Factorial_Accelerator/Acccelerator_Blocks.v:62]
+INFO: [Synth 8-6155] done synthesizing module 'set_reset_register' (36#1) [C:/Users/Work/Documents/SJSU/Fall 2019/CMPE 140/CMPE-140-Assignment-8/Factorial_Accelerator/Acccelerator_Blocks.v:62]
+INFO: [Synth 8-6157] synthesizing module 'f_output_mux' [C:/Users/Work/Documents/SJSU/Fall 2019/CMPE 140/CMPE-140-Assignment-8/Factorial_Accelerator/Acccelerator_Blocks.v:74]
+INFO: [Synth 8-226] default block is never used [C:/Users/Work/Documents/SJSU/Fall 2019/CMPE 140/CMPE-140-Assignment-8/Factorial_Accelerator/Acccelerator_Blocks.v:80]
+INFO: [Synth 8-6155] done synthesizing module 'f_output_mux' (37#1) [C:/Users/Work/Documents/SJSU/Fall 2019/CMPE 140/CMPE-140-Assignment-8/Factorial_Accelerator/Acccelerator_Blocks.v:74]
+INFO: [Synth 8-6155] done synthesizing module 'Factorial_Accelerator' (38#1) [C:/Users/Work/Documents/SJSU/Fall 2019/CMPE 140/CMPE-140-Assignment-8/Factorial_Accelerator/Factorial_Accelerator.v:23]
+INFO: [Synth 8-6157] synthesizing module 'GPIO' [C:/Users/Work/Documents/SJSU/Fall 2019/CMPE 140/CMPE-140-Assignment-8/GPIO.v:3]
+INFO: [Synth 8-6157] synthesizing module 'AddrDec' [C:/Users/Work/Documents/SJSU/Fall 2019/CMPE 140/CMPE-140-Assignment-8/AddrDec.v:3]
+INFO: [Synth 8-226] default block is never used [C:/Users/Work/Documents/SJSU/Fall 2019/CMPE 140/CMPE-140-Assignment-8/AddrDec.v:18]
+INFO: [Synth 8-6155] done synthesizing module 'AddrDec' (39#1) [C:/Users/Work/Documents/SJSU/Fall 2019/CMPE 140/CMPE-140-Assignment-8/AddrDec.v:3]
+INFO: [Synth 8-6157] synthesizing module 'DQReg' [C:/Users/Work/Documents/SJSU/Fall 2019/CMPE 140/CMPE-140-Assignment-8/DQReg.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'DQReg' (40#1) [C:/Users/Work/Documents/SJSU/Fall 2019/CMPE 140/CMPE-140-Assignment-8/DQReg.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'GPIO' (41#1) [C:/Users/Work/Documents/SJSU/Fall 2019/CMPE 140/CMPE-140-Assignment-8/GPIO.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'system' (42#1) [C:/Users/Work/Documents/SJSU/Fall 2019/CMPE 140/CMPE-140-Assignment-8/system.v:1]
+WARNING: [Synth 8-350] instance 'system' of module 'system' requires 8 connections, but only 6 given [C:/Users/Work/Documents/SJSU/Fall 2019/CMPE 140/CMPE-140-Assignment-8/mips_fpga.v:58]
+INFO: [Synth 8-6157] synthesizing module 'mux2__parameterized0' [C:/Users/Work/Documents/SJSU/Fall 2019/CMPE 140/CMPE-140-Assignment-8/mux2.v:1]
+	Parameter WIDTH bound to: 16 - type: integer 
+WARNING: [Synth 8-311] ignoring non-constant assignment in initial block [C:/Users/Work/Documents/SJSU/Fall 2019/CMPE 140/CMPE-140-Assignment-8/mux2.v:10]
+INFO: [Synth 8-226] default block is never used [C:/Users/Work/Documents/SJSU/Fall 2019/CMPE 140/CMPE-140-Assignment-8/mux2.v:14]
+INFO: [Synth 8-6155] done synthesizing module 'mux2__parameterized0' (42#1) [C:/Users/Work/Documents/SJSU/Fall 2019/CMPE 140/CMPE-140-Assignment-8/mux2.v:1]
+INFO: [Synth 8-6157] synthesizing module 'hex_to_7seg' [C:/Users/Work/Documents/SJSU/Fall 2019/CMPE 140/CMPE-140-Assignment-8/hex_to_7seg.v:1]
+INFO: [Synth 8-226] default block is never used [C:/Users/Work/Documents/SJSU/Fall 2019/CMPE 140/CMPE-140-Assignment-8/hex_to_7seg.v:7]
+INFO: [Synth 8-6155] done synthesizing module 'hex_to_7seg' (43#1) [C:/Users/Work/Documents/SJSU/Fall 2019/CMPE 140/CMPE-140-Assignment-8/hex_to_7seg.v:1]
+INFO: [Synth 8-6157] synthesizing module 'led_mux' [C:/Users/Work/Documents/SJSU/Fall 2019/CMPE 140/CMPE-140-Assignment-8/led_mux.v:1]
+INFO: [Synth 8-226] default block is never used [C:/Users/Work/Documents/SJSU/Fall 2019/CMPE 140/CMPE-140-Assignment-8/led_mux.v:20]
+INFO: [Synth 8-6155] done synthesizing module 'led_mux' (44#1) [C:/Users/Work/Documents/SJSU/Fall 2019/CMPE 140/CMPE-140-Assignment-8/led_mux.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'mips_fpga' (45#1) [C:/Users/Work/Documents/SJSU/Fall 2019/CMPE 140/CMPE-140-Assignment-8/mips_fpga.v:1]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 397.453 ; gain = 122.496
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+WARNING: [Synth 8-3295] tying undriven pin system:ra3[4] to constant 0 [C:/Users/Work/Documents/SJSU/Fall 2019/CMPE 140/CMPE-140-Assignment-8/mips_fpga.v:58]
+WARNING: [Synth 8-3295] tying undriven pin system:ra3[3] to constant 0 [C:/Users/Work/Documents/SJSU/Fall 2019/CMPE 140/CMPE-140-Assignment-8/mips_fpga.v:58]
+WARNING: [Synth 8-3295] tying undriven pin system:ra3[2] to constant 0 [C:/Users/Work/Documents/SJSU/Fall 2019/CMPE 140/CMPE-140-Assignment-8/mips_fpga.v:58]
+WARNING: [Synth 8-3295] tying undriven pin system:ra3[1] to constant 0 [C:/Users/Work/Documents/SJSU/Fall 2019/CMPE 140/CMPE-140-Assignment-8/mips_fpga.v:58]
+WARNING: [Synth 8-3295] tying undriven pin system:ra3[0] to constant 0 [C:/Users/Work/Documents/SJSU/Fall 2019/CMPE 140/CMPE-140-Assignment-8/mips_fpga.v:58]
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 397.453 ; gain = 122.496
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 397.453 ; gain = 122.496
+---------------------------------------------------------------------------------
+INFO: [Device 21-403] Loading part xc7a35ticpg236-1L
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [C:/Users/Work/Documents/SJSU/Fall 2019/CMPE 140/CMPE-140-Assignment-8/mips_fpga.xdc]
+Finished Parsing XDC File [C:/Users/Work/Documents/SJSU/Fall 2019/CMPE 140/CMPE-140-Assignment-8/mips_fpga.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/Users/Work/Documents/SJSU/Fall 2019/CMPE 140/CMPE-140-Assignment-8/mips_fpga.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/mips_fpga_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/mips_fpga_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 737.469 ; gain = 0.000
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 737.477 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 737.477 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.005 . Memory (MB): peak = 737.477 ; gain = 0.000
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 737.477 ; gain = 462.520
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7a35ticpg236-1L
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 737.477 ; gain = 462.520
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 737.477 ; gain = 462.520
+---------------------------------------------------------------------------------
+INFO: [Synth 8-5545] ROM "count1" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "count2" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "clk_5KHz" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "clk_4sec" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5546] ROM "debounced_button0" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "rom" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-802] inferred FSM for state register 'current_state_reg' in module 'Factorial_CU'
+INFO: [Synth 8-5544] ROM "Load_count" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "next_state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "next_state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+WARNING: [Synth 8-327] inferring latch for variable 'y_reg' [C:/Users/Work/Documents/SJSU/Fall 2019/CMPE 140/CMPE-140-Assignment-8/datapath/alu.v:9]
+WARNING: [Synth 8-327] inferring latch for variable 'Load_count_reg' [C:/Users/Work/Documents/SJSU/Fall 2019/CMPE 140/CMPE-140-Assignment-8/Factorial_Accelerator/Factorial_CU.v:62]
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                 iSTATE2 |                              000 |                              000
+                 iSTATE3 |                              001 |                              001
+                  iSTATE |                              010 |                              010
+                 iSTATE0 |                              011 |                              011
+                 iSTATE5 |                              100 |                              100
+                 iSTATE1 |                              101 |                              101
+                 iSTATE4 |                              110 |                              110
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'current_state_reg' using encoding 'sequential' in module 'Factorial_CU'
+WARNING: [Synth 8-327] inferring latch for variable 'EN_reg' [C:/Users/Work/Documents/SJSU/Fall 2019/CMPE 140/CMPE-140-Assignment-8/Factorial_Accelerator/Factorial_CU.v:63]
+WARNING: [Synth 8-327] inferring latch for variable 'sel_reg' [C:/Users/Work/Documents/SJSU/Fall 2019/CMPE 140/CMPE-140-Assignment-8/Factorial_Accelerator/Factorial_CU.v:65]
+WARNING: [Synth 8-327] inferring latch for variable 'sel2_reg' [C:/Users/Work/Documents/SJSU/Fall 2019/CMPE 140/CMPE-140-Assignment-8/Factorial_Accelerator/Factorial_CU.v:66]
+WARNING: [Synth 8-327] inferring latch for variable 'Z_reg' [C:/Users/Work/Documents/SJSU/Fall 2019/CMPE 140/CMPE-140-Assignment-8/Factorial_Accelerator/Factorial_Blocks.v:30]
+WARNING: [Synth 8-327] inferring latch for variable 'ctrl_reg' [C:/Users/Work/Documents/SJSU/Fall 2019/CMPE 140/CMPE-140-Assignment-8/AddrDec.v:13]
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 737.477 ; gain = 462.520
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   3 Input     64 Bit       Adders := 1     
+	   2 Input     33 Bit       Adders := 1     
+	   2 Input     32 Bit       Adders := 5     
+	   2 Input      2 Bit       Adders := 1     
++---Registers : 
+	               64 Bit    Registers := 2     
+	               32 Bit    Registers := 30    
+	               16 Bit    Registers := 1     
+	                5 Bit    Registers := 4     
+	                4 Bit    Registers := 1     
+	                3 Bit    Registers := 1     
+	                2 Bit    Registers := 4     
+	                1 Bit    Registers := 32    
++---Multipliers : 
+	                32x32  Multipliers := 2     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 22    
+	  31 Input     32 Bit        Muxes := 1     
+	   4 Input     32 Bit        Muxes := 4     
+	   2 Input     16 Bit        Muxes := 1     
+	   4 Input     12 Bit        Muxes := 1     
+	   8 Input     11 Bit        Muxes := 1     
+	  14 Input      8 Bit        Muxes := 1     
+	   4 Input      5 Bit        Muxes := 1     
+	   7 Input      3 Bit        Muxes := 1     
+	   2 Input      3 Bit        Muxes := 3     
+	   4 Input      2 Bit        Muxes := 2     
+	   2 Input      2 Bit        Muxes := 2     
+	   2 Input      1 Bit        Muxes := 4     
+	   7 Input      1 Bit        Muxes := 6     
+	   4 Input      1 Bit        Muxes := 3     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+Module clk_gen 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 2     
++---Registers : 
+	               32 Bit    Registers := 2     
+	                1 Bit    Registers := 2     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 2     
+	   2 Input      1 Bit        Muxes := 2     
+Module button_debouncer 
+Detailed RTL Component Info : 
++---Registers : 
+	               16 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 1     
+Module imem 
+Detailed RTL Component Info : 
++---Muxes : 
+	  31 Input     32 Bit        Muxes := 1     
+Module IF_stage 
+Detailed RTL Component Info : 
++---Registers : 
+	               32 Bit    Registers := 2     
+Module ID_stage 
+Detailed RTL Component Info : 
++---Registers : 
+	               32 Bit    Registers := 6     
+	                5 Bit    Registers := 2     
+	                3 Bit    Registers := 1     
+	                2 Bit    Registers := 2     
+	                1 Bit    Registers := 10    
+Module EXE_stage 
+Detailed RTL Component Info : 
++---Registers : 
+	               64 Bit    Registers := 1     
+	               32 Bit    Registers := 6     
+	                5 Bit    Registers := 1     
+	                2 Bit    Registers := 1     
+	                1 Bit    Registers := 9     
+Module MEM_stage 
+Detailed RTL Component Info : 
++---Registers : 
+	               64 Bit    Registers := 1     
+	               32 Bit    Registers := 5     
+	                5 Bit    Registers := 1     
+	                1 Bit    Registers := 6     
+Module maindec 
+Detailed RTL Component Info : 
++---Muxes : 
+	   8 Input     11 Bit        Muxes := 1     
+Module auxdec 
+Detailed RTL Component Info : 
++---Muxes : 
+	  14 Input      8 Bit        Muxes := 1     
+Module dreg 
+Detailed RTL Component Info : 
++---Registers : 
+	               32 Bit    Registers := 1     
+Module adder 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 1     
+Module mux2 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 1     
+Module mux4 
+Detailed RTL Component Info : 
++---Muxes : 
+	   4 Input      5 Bit        Muxes := 1     
+Module regfile 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 3     
+Module alu 
+Detailed RTL Component Info : 
++---Adders : 
+	   3 Input     64 Bit       Adders := 1     
+	   2 Input     33 Bit       Adders := 1     
++---Multipliers : 
+	                32x32  Multipliers := 1     
++---Muxes : 
+	   7 Input      1 Bit        Muxes := 1     
+Module ENdreg 
+Detailed RTL Component Info : 
++---Registers : 
+	               32 Bit    Registers := 1     
+Module mux4__parameterized0 
+Detailed RTL Component Info : 
++---Muxes : 
+	   4 Input     32 Bit        Muxes := 1     
+Module shifter 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 1     
+Module data_forwarding_unit 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 4     
+Module write_to_decode_forwarding 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 2     
+Module Address_Decoder 
+Detailed RTL Component Info : 
++---Muxes : 
+	   4 Input      2 Bit        Muxes := 1     
+	   4 Input      1 Bit        Muxes := 3     
+Module Factorial_Address_Decoder 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input      2 Bit        Muxes := 2     
+Module f_register 
+Detailed RTL Component Info : 
++---Registers : 
+	                1 Bit    Registers := 1     
+Module f_register__parameterized0 
+Detailed RTL Component Info : 
++---Registers : 
+	                4 Bit    Registers := 1     
+Module f_register__parameterized1 
+Detailed RTL Component Info : 
++---Registers : 
+	               32 Bit    Registers := 1     
+Module Factorial_CU 
+Detailed RTL Component Info : 
++---Muxes : 
+	   7 Input      3 Bit        Muxes := 1     
+	   2 Input      3 Bit        Muxes := 3     
+	   7 Input      1 Bit        Muxes := 5     
+Module Decrementer 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 1     
++---Registers : 
+	               32 Bit    Registers := 2     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 2     
+	   2 Input      1 Bit        Muxes := 1     
+Module Mux 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 1     
+Module Load_Reg 
+Detailed RTL Component Info : 
++---Registers : 
+	               32 Bit    Registers := 1     
+Module MUL 
+Detailed RTL Component Info : 
++---Multipliers : 
+	                32x32  Multipliers := 1     
+Module set_reset_register 
+Detailed RTL Component Info : 
++---Registers : 
+	                1 Bit    Registers := 1     
+Module f_output_mux 
+Detailed RTL Component Info : 
++---Muxes : 
+	   4 Input     32 Bit        Muxes := 1     
+Module AddrDec 
+Detailed RTL Component Info : 
++---Muxes : 
+	   4 Input      2 Bit        Muxes := 1     
+Module DQReg 
+Detailed RTL Component Info : 
++---Registers : 
+	               32 Bit    Registers := 1     
+Module mux2__parameterized0 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input     16 Bit        Muxes := 1     
+Module led_mux 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      2 Bit       Adders := 1     
++---Registers : 
+	                2 Bit    Registers := 1     
++---Muxes : 
+	   4 Input     12 Bit        Muxes := 1     
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 90 (col length:60)
+BRAMs: 100 (col length: RAMB18 60 RAMB36 30)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+Warning: Parallel synthesis criteria is not met 
+INFO: [Synth 8-5845] Not enough pipeline registers after wide multiplier. Recommended levels of pipeline registers is 4 [C:/Users/Work/Documents/SJSU/Fall 2019/CMPE 140/CMPE-140-Assignment-8/datapath/alu.v:16]
+DSP Report: Generating DSP y0, operation Mode is: A*B.
+DSP Report: operator y0 is absorbed into DSP y0.
+DSP Report: operator y0 is absorbed into DSP y0.
+DSP Report: Generating DSP y0, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator y0 is absorbed into DSP y0.
+DSP Report: operator y0 is absorbed into DSP y0.
+DSP Report: Generating DSP y0, operation Mode is: A*B.
+DSP Report: operator y0 is absorbed into DSP y0.
+DSP Report: operator y0 is absorbed into DSP y0.
+DSP Report: Generating DSP y0, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator y0 is absorbed into DSP y0.
+DSP Report: operator y0 is absorbed into DSP y0.
+WARNING: [Synth 8-3936] Found unconnected internal register 'ID_stage/instrE_reg' and it is trimmed from '32' to '26' bits. [C:/Users/Work/Documents/SJSU/Fall 2019/CMPE 140/CMPE-140-Assignment-8/new/ID_stage.v:76]
+INFO: [Synth 8-5545] ROM "clk_gen/count2" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "clk_gen/clk_5KHz" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5546] ROM "bd/debounced_button0" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5845] Not enough pipeline registers after wide multiplier. Recommended levels of pipeline registers is 4 [C:/Users/Work/Documents/SJSU/Fall 2019/CMPE 140/CMPE-140-Assignment-8/Factorial_Accelerator/Factorial_Blocks.v:65]
+DSP Report: Generating DSP system/fact_top/FA/DP/MUL/Z0, operation Mode is: A*B''.
+DSP Report: register B is absorbed into DSP system/fact_top/FA/DP/MUL/Z0.
+DSP Report: register B is absorbed into DSP system/fact_top/FA/DP/MUL/Z0.
+DSP Report: operator system/fact_top/FA/DP/MUL/Z0 is absorbed into DSP system/fact_top/FA/DP/MUL/Z0.
+DSP Report: operator system/fact_top/FA/DP/MUL/Z0 is absorbed into DSP system/fact_top/FA/DP/MUL/Z0.
+DSP Report: Generating DSP system/fact_top/FA/DP/MUL/Z0, operation Mode is: (PCIN>>17)+A''*B.
+DSP Report: register A is absorbed into DSP system/fact_top/FA/DP/MUL/Z0.
+DSP Report: register A is absorbed into DSP system/fact_top/FA/DP/MUL/Z0.
+DSP Report: operator system/fact_top/FA/DP/MUL/Z0 is absorbed into DSP system/fact_top/FA/DP/MUL/Z0.
+DSP Report: operator system/fact_top/FA/DP/MUL/Z0 is absorbed into DSP system/fact_top/FA/DP/MUL/Z0.
+DSP Report: Generating DSP system/fact_top/FA/DP/MUL/Z0, operation Mode is: A''*B.
+DSP Report: register A is absorbed into DSP system/fact_top/FA/DP/MUL/Z0.
+DSP Report: register A is absorbed into DSP system/fact_top/FA/DP/MUL/Z0.
+DSP Report: operator system/fact_top/FA/DP/MUL/Z0 is absorbed into DSP system/fact_top/FA/DP/MUL/Z0.
+DSP Report: operator system/fact_top/FA/DP/MUL/Z0 is absorbed into DSP system/fact_top/FA/DP/MUL/Z0.
+DSP Report: Generating DSP system/fact_top/FA/DP/MUL/Z0, operation Mode is: (PCIN>>17)+A''*B.
+DSP Report: register A is absorbed into DSP system/fact_top/FA/DP/MUL/Z0.
+DSP Report: register A is absorbed into DSP system/fact_top/FA/DP/MUL/Z0.
+DSP Report: operator system/fact_top/FA/DP/MUL/Z0 is absorbed into DSP system/fact_top/FA/DP/MUL/Z0.
+DSP Report: operator system/fact_top/FA/DP/MUL/Z0 is absorbed into DSP system/fact_top/FA/DP/MUL/Z0.
+INFO: [Synth 8-3886] merging instance 'system/mips/dp/ID_stage/instrE_reg[21]' (FD) to 'system/mips/dp/ID_stage/ra1E_reg[0]'
+INFO: [Synth 8-3886] merging instance 'system/mips/dp/ID_stage/instrE_reg[22]' (FD) to 'system/mips/dp/ID_stage/ra1E_reg[1]'
+INFO: [Synth 8-3886] merging instance 'system/mips/dp/ID_stage/instrE_reg[23]' (FD) to 'system/mips/dp/ID_stage/ra1E_reg[2]'
+INFO: [Synth 8-3886] merging instance 'system/mips/dp/ID_stage/instrE_reg[24]' (FD) to 'system/mips/dp/ID_stage/ra1E_reg[3]'
+INFO: [Synth 8-3886] merging instance 'system/mips/dp/ID_stage/instrE_reg[25]' (FD) to 'system/mips/dp/ID_stage/ra1E_reg[4]'
+INFO: [Synth 8-3886] merging instance 'system/mips/dp/ID_stage/instrE_reg[5]' (FD) to 'system/mips/dp/ID_stage/sext_immE_reg[5]'
+INFO: [Synth 8-3886] merging instance 'system/mips/dp/EXE_stage/jtaM_reg[28]' (FD) to 'system/mips/dp/EXE_stage/pc_plus_4M_reg[28]'
+INFO: [Synth 8-3886] merging instance 'system/mips/dp/EXE_stage/jtaM_reg[29]' (FD) to 'system/mips/dp/EXE_stage/pc_plus_4M_reg[29]'
+INFO: [Synth 8-3886] merging instance 'system/mips/dp/EXE_stage/jtaM_reg[30]' (FD) to 'system/mips/dp/EXE_stage/pc_plus_4M_reg[30]'
+INFO: [Synth 8-3886] merging instance 'system/mips/dp/EXE_stage/jtaM_reg[31]' (FD) to 'system/mips/dp/EXE_stage/pc_plus_4M_reg[31]'
+INFO: [Synth 8-3886] merging instance 'system/mips/dp/MEM_stage/jtaW_reg[28]' (FD) to 'system/mips/dp/MEM_stage/pc_plus_4W_reg[28]'
+INFO: [Synth 8-3886] merging instance 'system/mips/dp/MEM_stage/jtaW_reg[29]' (FD) to 'system/mips/dp/MEM_stage/pc_plus_4W_reg[29]'
+INFO: [Synth 8-3886] merging instance 'system/mips/dp/MEM_stage/jtaW_reg[30]' (FD) to 'system/mips/dp/MEM_stage/pc_plus_4W_reg[30]'
+INFO: [Synth 8-3886] merging instance 'system/mips/dp/MEM_stage/jtaW_reg[31]' (FD) to 'system/mips/dp/MEM_stage/pc_plus_4W_reg[31]'
+INFO: [Synth 8-3886] merging instance 'system/mips/dp/ID_stage/instrE_reg[0]' (FD) to 'system/mips/dp/ID_stage/sext_immE_reg[0]'
+INFO: [Synth 8-3886] merging instance 'system/mips/dp/ID_stage/instrE_reg[1]' (FD) to 'system/mips/dp/ID_stage/sext_immE_reg[1]'
+INFO: [Synth 8-3886] merging instance 'system/mips/dp/ID_stage/instrE_reg[2]' (FD) to 'system/mips/dp/ID_stage/sext_immE_reg[2]'
+INFO: [Synth 8-3886] merging instance 'system/mips/dp/ID_stage/instrE_reg[3]' (FD) to 'system/mips/dp/ID_stage/sext_immE_reg[3]'
+INFO: [Synth 8-3886] merging instance 'system/mips/dp/ID_stage/instrE_reg[4]' (FD) to 'system/mips/dp/ID_stage/sext_immE_reg[4]'
+INFO: [Synth 8-3886] merging instance 'system/mips/dp/EXE_stage/jtaM_reg[0]' (FD) to 'system/mips/dp/EXE_stage/jtaM_reg[1]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\system/mips/dp/EXE_stage/jtaM_reg[1] )
+INFO: [Synth 8-3886] merging instance 'system/mips/dp/MEM_stage/jtaW_reg[0]' (FD) to 'system/mips/dp/MEM_stage/jtaW_reg[1]'
+INFO: [Synth 8-3886] merging instance 'system/mips/dp/MEM_stage/jtaW_reg[1]' (FD) to 'system/mips/dp/EXE_stage/jtaM_reg[1]'
+INFO: [Synth 8-3886] merging instance 'system/mips/dp/EXE_stage/btaM_reg[1]' (FD) to 'system/mips/dp/EXE_stage/pc_plus_4M_reg[1]'
+INFO: [Synth 8-3886] merging instance 'system/mips/dp/IF_stage/instrD_reg[24]' (FDC) to 'system/mips/dp/IF_stage/instrD_reg[5]'
+INFO: [Synth 8-3886] merging instance 'system/mips/dp/IF_stage/instrD_reg[25]' (FDC) to 'system/mips/dp/IF_stage/instrD_reg[20]'
+INFO: [Synth 8-3886] merging instance 'system/mips/dp/ID_stage/jal_selE_reg' (FD) to 'system/mips/dp/ID_stage/reg_dstE_reg[1]'
+INFO: [Synth 8-3886] merging instance 'system/mips/dp/IF_stage/instrD_reg[10]' (FDC) to 'system/mips/dp/IF_stage/instrD_reg[9]'
+INFO: [Synth 8-3886] merging instance 'system/mips/dp/IF_stage/instrD_reg[9]' (FDC) to 'system/mips/dp/IF_stage/instrD_reg[7]'
+INFO: [Synth 8-3886] merging instance 'system/mips/dp/IF_stage/instrD_reg[7]' (FDC) to 'system/mips/dp/IF_stage/instrD_reg[4]'
+INFO: [Synth 8-3886] merging instance 'system/mips/dp/IF_stage/instrD_reg[4]' (FDC) to 'system/mips/dp/IF_stage/instrD_reg[15]'
+INFO: [Synth 8-3886] merging instance 'system/mips/dp/IF_stage/instrD_reg[15]' (FDC) to 'system/mips/dp/IF_stage/instrD_reg[28]'
+INFO: [Synth 8-3886] merging instance 'system/mips/dp/ID_stage/sext_immE_reg[15]' (FD) to 'system/mips/dp/ID_stage/instrE_reg[15]'
+INFO: [Synth 8-3886] merging instance 'system/mips/dp/ID_stage/sext_immE_reg[14]' (FD) to 'system/mips/dp/ID_stage/instrE_reg[14]'
+INFO: [Synth 8-3886] merging instance 'system/mips/dp/ID_stage/sext_immE_reg[13]' (FD) to 'system/mips/dp/ID_stage/instrE_reg[13]'
+INFO: [Synth 8-3886] merging instance 'system/mips/dp/ID_stage/sext_immE_reg[12]' (FD) to 'system/mips/dp/ID_stage/instrE_reg[12]'
+INFO: [Synth 8-3886] merging instance 'system/mips/dp/ID_stage/sext_immE_reg[4]' (FD) to 'system/mips/dp/ID_stage/instrE_reg[15]'
+INFO: [Synth 8-3886] merging instance 'system/mips/dp/ID_stage/sext_immE_reg[5]' (FD) to 'system/mips/dp/ID_stage/ra1E_reg[3]'
+INFO: [Synth 8-3886] merging instance 'system/mips/dp/ID_stage/sext_immE_reg[6]' (FD) to 'system/mips/dp/ID_stage/instrE_reg[6]'
+INFO: [Synth 8-3886] merging instance 'system/mips/dp/ID_stage/sext_immE_reg[7]' (FD) to 'system/mips/dp/ID_stage/instrE_reg[15]'
+INFO: [Synth 8-3886] merging instance 'system/mips/dp/ID_stage/sext_immE_reg[8]' (FD) to 'system/mips/dp/ID_stage/instrE_reg[8]'
+INFO: [Synth 8-3886] merging instance 'system/mips/dp/ID_stage/sext_immE_reg[9]' (FD) to 'system/mips/dp/ID_stage/instrE_reg[15]'
+INFO: [Synth 8-3886] merging instance 'system/mips/dp/ID_stage/sext_immE_reg[10]' (FD) to 'system/mips/dp/ID_stage/instrE_reg[15]'
+INFO: [Synth 8-3886] merging instance 'system/mips/dp/ID_stage/sext_immE_reg[11]' (FD) to 'system/mips/dp/ID_stage/instrE_reg[11]'
+INFO: [Synth 8-3886] merging instance 'system/mips/dp/ID_stage/ra1E_reg[4]' (FD) to 'system/mips/dp/ID_stage/ra2E_reg[4]'
+INFO: [Synth 8-3886] merging instance 'system/mips/dp/ID_stage/instrE_reg[10]' (FD) to 'system/mips/dp/ID_stage/instrE_reg[15]'
+INFO: [Synth 8-3886] merging instance 'system/mips/dp/ID_stage/instrE_reg[9]' (FD) to 'system/mips/dp/ID_stage/instrE_reg[15]'
+INFO: [Synth 8-3886] merging instance 'system/mips/dp/ID_stage/instrE_reg[7]' (FD) to 'system/mips/dp/ID_stage/instrE_reg[15]'
+INFO: [Synth 8-3886] merging instance 'system/mips/dp/ID_stage/instrE_reg[19]' (FD) to 'system/mips/dp/ID_stage/ra2E_reg[3]'
+INFO: [Synth 8-3886] merging instance 'system/mips/dp/ID_stage/instrE_reg[20]' (FD) to 'system/mips/dp/ID_stage/ra2E_reg[4]'
+INFO: [Synth 8-3886] merging instance 'system/mips/dp/ID_stage/instrE_reg[15]' (FD) to 'system/mips/dp/ID_stage/branchE_reg'
+INFO: [Synth 8-3886] merging instance 'system/mips/dp/ID_stage/instrE_reg[16]' (FD) to 'system/mips/dp/ID_stage/ra2E_reg[0]'
+INFO: [Synth 8-3886] merging instance 'system/mips/dp/ID_stage/instrE_reg[17]' (FD) to 'system/mips/dp/ID_stage/ra2E_reg[1]'
+INFO: [Synth 8-3886] merging instance 'system/mips/dp/ID_stage/instrE_reg[18]' (FD) to 'system/mips/dp/ID_stage/ra2E_reg[2]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\system/mips/dp/IF_stage/instrD_reg[20] )
+INFO: [Synth 8-3886] merging instance 'system/mips/dp/ID_stage/ra2E_reg[4]' (FD) to 'system/mips/dp/EXE_stage/jtaM_reg[1]'
+INFO: [Synth 8-3886] merging instance 'system/mips/dp/EXE_stage/jtaM_reg[27]' (FD) to 'system/mips/dp/EXE_stage/jtaM_reg[22]'
+INFO: [Synth 8-3886] merging instance 'system/mips/dp/EXE_stage/jtaM_reg[26]' (FD) to 'system/mips/dp/EXE_stage/jtaM_reg[7]'
+INFO: [Synth 8-3886] merging instance 'system/mips/dp/EXE_stage/jtaM_reg[9]' (FD) to 'system/mips/dp/EXE_stage/jtaM_reg[17]'
+INFO: [Synth 8-3886] merging instance 'system/mips/dp/EXE_stage/jtaM_reg[11]' (FD) to 'system/mips/dp/EXE_stage/jtaM_reg[17]'
+INFO: [Synth 8-3886] merging instance 'system/mips/dp/EXE_stage/jtaM_reg[12]' (FD) to 'system/mips/dp/EXE_stage/jtaM_reg[17]'
+INFO: [Synth 8-3886] merging instance 'system/mips/dp/EXE_stage/jtaM_reg[17]' (FD) to 'system/mips/dp/EXE_stage/jtaM_reg[6]'
+INFO: [Synth 8-3886] merging instance 'system/mips/dp/MEM_stage/jtaW_reg[27]' (FD) to 'system/mips/dp/MEM_stage/jtaW_reg[22]'
+INFO: [Synth 8-3886] merging instance 'system/mips/dp/MEM_stage/jtaW_reg[26]' (FD) to 'system/mips/dp/MEM_stage/jtaW_reg[7]'
+INFO: [Synth 8-3886] merging instance 'system/mips/dp/MEM_stage/jtaW_reg[9]' (FD) to 'system/mips/dp/MEM_stage/jtaW_reg[17]'
+INFO: [Synth 8-3886] merging instance 'system/mips/dp/MEM_stage/jtaW_reg[11]' (FD) to 'system/mips/dp/MEM_stage/jtaW_reg[17]'
+INFO: [Synth 8-3886] merging instance 'system/mips/dp/MEM_stage/jtaW_reg[12]' (FD) to 'system/mips/dp/MEM_stage/jtaW_reg[17]'
+INFO: [Synth 8-3886] merging instance 'system/mips/dp/MEM_stage/jtaW_reg[17]' (FD) to 'system/mips/dp/MEM_stage/jtaW_reg[6]'
+INFO: [Synth 8-3886] merging instance 'system/mips/dp/EXE_stage/jtaM_reg[6]' (FD) to 'system/mips/dp/EXE_stage/branchM_reg'
+INFO: [Synth 8-3886] merging instance 'system/mips/dp/IF_stage/instrD_reg[26]' (FDC) to 'system/mips/dp/IF_stage/instrD_reg[31]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\system/mips/dp/EXE_stage/jtaM_reg[1] )
+INFO: [Synth 8-3886] merging instance 'system/mips/dp/EXE_stage/jtaM_reg[1]' (FD) to 'system/mips/dp/EXE_stage/jtaM_reg[22]'
+INFO: [Synth 8-3886] merging instance 'system/mips/dp/EXE_stage/jtaM_reg[22]' (FD) to 'system/mips/dp/ID_stage/reg_dstE_reg[1]'
+INFO: [Synth 8-3886] merging instance 'system/mips/dp/MEM_stage/jtaW_reg[22]' (FD) to 'system/mips/dp/EXE_stage/jal_selM_reg'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\system/mips/dp/ID_stage/reg_dstE_reg[1] )
+INFO: [Synth 8-3886] merging instance 'system/mips/dp/ID_stage/reg_dstE_reg[1]' (FD) to 'system/mips/dp/EXE_stage/jal_selM_reg'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\system/mips/dp/EXE_stage/jal_selM_reg )
+INFO: [Synth 8-3886] merging instance 'system/mips/dp/MEM_stage/jal_selW_reg' (FD) to 'system/mips/dp/EXE_stage/jal_selM_reg'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\system/mips/dp/EXE_stage/jal_selM_reg )
+WARNING: [Synth 8-3332] Sequential element (system/fact_top/FA/DP/Mux1/Z_reg[31]) is unused and will be removed from module mips_fpga.
+WARNING: [Synth 8-3332] Sequential element (system/fact_top/FA/DP/Mux1/Z_reg[30]) is unused and will be removed from module mips_fpga.
+WARNING: [Synth 8-3332] Sequential element (system/fact_top/FA/DP/Mux1/Z_reg[29]) is unused and will be removed from module mips_fpga.
+WARNING: [Synth 8-3332] Sequential element (system/fact_top/FA/DP/Mux1/Z_reg[28]) is unused and will be removed from module mips_fpga.
+WARNING: [Synth 8-3332] Sequential element (system/fact_top/FA/DP/Mux1/Z_reg[27]) is unused and will be removed from module mips_fpga.
+WARNING: [Synth 8-3332] Sequential element (system/fact_top/FA/DP/Mux1/Z_reg[26]) is unused and will be removed from module mips_fpga.
+WARNING: [Synth 8-3332] Sequential element (system/fact_top/FA/DP/Mux1/Z_reg[25]) is unused and will be removed from module mips_fpga.
+WARNING: [Synth 8-3332] Sequential element (system/fact_top/FA/DP/Mux1/Z_reg[24]) is unused and will be removed from module mips_fpga.
+WARNING: [Synth 8-3332] Sequential element (system/fact_top/FA/DP/Mux1/Z_reg[23]) is unused and will be removed from module mips_fpga.
+WARNING: [Synth 8-3332] Sequential element (system/fact_top/FA/DP/Mux1/Z_reg[22]) is unused and will be removed from module mips_fpga.
+WARNING: [Synth 8-3332] Sequential element (system/fact_top/FA/DP/Mux1/Z_reg[21]) is unused and will be removed from module mips_fpga.
+WARNING: [Synth 8-3332] Sequential element (system/fact_top/FA/DP/Mux1/Z_reg[20]) is unused and will be removed from module mips_fpga.
+WARNING: [Synth 8-3332] Sequential element (system/fact_top/FA/DP/Mux1/Z_reg[19]) is unused and will be removed from module mips_fpga.
+WARNING: [Synth 8-3332] Sequential element (system/fact_top/FA/DP/Mux1/Z_reg[18]) is unused and will be removed from module mips_fpga.
+WARNING: [Synth 8-3332] Sequential element (system/fact_top/FA/DP/Mux1/Z_reg[17]) is unused and will be removed from module mips_fpga.
+WARNING: [Synth 8-3332] Sequential element (system/fact_top/FA/DP/Mux1/Z_reg[16]) is unused and will be removed from module mips_fpga.
+WARNING: [Synth 8-3332] Sequential element (system/fact_top/FA/DP/Mux1/Z_reg[15]) is unused and will be removed from module mips_fpga.
+WARNING: [Synth 8-3332] Sequential element (system/fact_top/FA/DP/Mux1/Z_reg[14]) is unused and will be removed from module mips_fpga.
+WARNING: [Synth 8-3332] Sequential element (system/fact_top/FA/DP/Mux1/Z_reg[13]) is unused and will be removed from module mips_fpga.
+WARNING: [Synth 8-3332] Sequential element (system/fact_top/FA/DP/Mux1/Z_reg[12]) is unused and will be removed from module mips_fpga.
+WARNING: [Synth 8-3332] Sequential element (system/fact_top/FA/DP/Mux1/Z_reg[11]) is unused and will be removed from module mips_fpga.
+WARNING: [Synth 8-3332] Sequential element (system/fact_top/FA/DP/Mux1/Z_reg[10]) is unused and will be removed from module mips_fpga.
+WARNING: [Synth 8-3332] Sequential element (system/fact_top/FA/DP/Mux1/Z_reg[9]) is unused and will be removed from module mips_fpga.
+WARNING: [Synth 8-3332] Sequential element (system/fact_top/FA/DP/Mux1/Z_reg[8]) is unused and will be removed from module mips_fpga.
+WARNING: [Synth 8-3332] Sequential element (system/fact_top/FA/DP/Mux1/Z_reg[7]) is unused and will be removed from module mips_fpga.
+WARNING: [Synth 8-3332] Sequential element (system/fact_top/FA/DP/Mux1/Z_reg[6]) is unused and will be removed from module mips_fpga.
+WARNING: [Synth 8-3332] Sequential element (system/fact_top/FA/DP/Mux1/Z_reg[5]) is unused and will be removed from module mips_fpga.
+WARNING: [Synth 8-3332] Sequential element (system/fact_top/FA/DP/Mux1/Z_reg[4]) is unused and will be removed from module mips_fpga.
+WARNING: [Synth 8-3332] Sequential element (system/fact_top/FA/DP/Mux1/Z_reg[3]) is unused and will be removed from module mips_fpga.
+WARNING: [Synth 8-3332] Sequential element (system/fact_top/FA/DP/Mux1/Z_reg[2]) is unused and will be removed from module mips_fpga.
+WARNING: [Synth 8-3332] Sequential element (system/fact_top/FA/DP/Mux1/Z_reg[1]) is unused and will be removed from module mips_fpga.
+WARNING: [Synth 8-3332] Sequential element (system/fact_top/FA/DP/Mux1/Z_reg[0]) is unused and will be removed from module mips_fpga.
+WARNING: [Synth 8-3332] Sequential element (system/fact_top/FA/DP/Mux2/Z_reg[31]) is unused and will be removed from module mips_fpga.
+WARNING: [Synth 8-3332] Sequential element (system/fact_top/FA/DP/Mux2/Z_reg[30]) is unused and will be removed from module mips_fpga.
+WARNING: [Synth 8-3332] Sequential element (system/fact_top/FA/DP/Mux2/Z_reg[29]) is unused and will be removed from module mips_fpga.
+WARNING: [Synth 8-3332] Sequential element (system/fact_top/FA/DP/Mux2/Z_reg[28]) is unused and will be removed from module mips_fpga.
+WARNING: [Synth 8-3332] Sequential element (system/fact_top/FA/DP/Mux2/Z_reg[27]) is unused and will be removed from module mips_fpga.
+WARNING: [Synth 8-3332] Sequential element (system/fact_top/FA/DP/Mux2/Z_reg[26]) is unused and will be removed from module mips_fpga.
+WARNING: [Synth 8-3332] Sequential element (system/fact_top/FA/DP/Mux2/Z_reg[25]) is unused and will be removed from module mips_fpga.
+WARNING: [Synth 8-3332] Sequential element (system/fact_top/FA/DP/Mux2/Z_reg[24]) is unused and will be removed from module mips_fpga.
+WARNING: [Synth 8-3332] Sequential element (system/fact_top/FA/DP/Mux2/Z_reg[23]) is unused and will be removed from module mips_fpga.
+WARNING: [Synth 8-3332] Sequential element (system/fact_top/FA/DP/Mux2/Z_reg[22]) is unused and will be removed from module mips_fpga.
+WARNING: [Synth 8-3332] Sequential element (system/fact_top/FA/DP/Mux2/Z_reg[21]) is unused and will be removed from module mips_fpga.
+WARNING: [Synth 8-3332] Sequential element (system/fact_top/FA/DP/Mux2/Z_reg[20]) is unused and will be removed from module mips_fpga.
+WARNING: [Synth 8-3332] Sequential element (system/fact_top/FA/DP/Mux2/Z_reg[19]) is unused and will be removed from module mips_fpga.
+WARNING: [Synth 8-3332] Sequential element (system/fact_top/FA/DP/Mux2/Z_reg[18]) is unused and will be removed from module mips_fpga.
+WARNING: [Synth 8-3332] Sequential element (system/fact_top/FA/DP/Mux2/Z_reg[17]) is unused and will be removed from module mips_fpga.
+WARNING: [Synth 8-3332] Sequential element (system/fact_top/FA/DP/Mux2/Z_reg[16]) is unused and will be removed from module mips_fpga.
+WARNING: [Synth 8-3332] Sequential element (system/fact_top/FA/DP/Mux2/Z_reg[15]) is unused and will be removed from module mips_fpga.
+WARNING: [Synth 8-3332] Sequential element (system/fact_top/FA/DP/Mux2/Z_reg[14]) is unused and will be removed from module mips_fpga.
+WARNING: [Synth 8-3332] Sequential element (system/fact_top/FA/DP/Mux2/Z_reg[13]) is unused and will be removed from module mips_fpga.
+WARNING: [Synth 8-3332] Sequential element (system/fact_top/FA/DP/Mux2/Z_reg[12]) is unused and will be removed from module mips_fpga.
+WARNING: [Synth 8-3332] Sequential element (system/fact_top/FA/DP/Mux2/Z_reg[11]) is unused and will be removed from module mips_fpga.
+WARNING: [Synth 8-3332] Sequential element (system/fact_top/FA/DP/Mux2/Z_reg[10]) is unused and will be removed from module mips_fpga.
+WARNING: [Synth 8-3332] Sequential element (system/fact_top/FA/DP/Mux2/Z_reg[9]) is unused and will be removed from module mips_fpga.
+WARNING: [Synth 8-3332] Sequential element (system/fact_top/FA/DP/Mux2/Z_reg[8]) is unused and will be removed from module mips_fpga.
+WARNING: [Synth 8-3332] Sequential element (system/fact_top/FA/DP/Mux2/Z_reg[7]) is unused and will be removed from module mips_fpga.
+WARNING: [Synth 8-3332] Sequential element (system/fact_top/FA/DP/Mux2/Z_reg[6]) is unused and will be removed from module mips_fpga.
+WARNING: [Synth 8-3332] Sequential element (system/fact_top/FA/DP/Mux2/Z_reg[5]) is unused and will be removed from module mips_fpga.
+WARNING: [Synth 8-3332] Sequential element (system/fact_top/FA/DP/Mux2/Z_reg[4]) is unused and will be removed from module mips_fpga.
+WARNING: [Synth 8-3332] Sequential element (system/fact_top/FA/DP/Mux2/Z_reg[3]) is unused and will be removed from module mips_fpga.
+WARNING: [Synth 8-3332] Sequential element (system/fact_top/FA/DP/Mux2/Z_reg[2]) is unused and will be removed from module mips_fpga.
+WARNING: [Synth 8-3332] Sequential element (system/fact_top/FA/DP/Mux2/Z_reg[1]) is unused and will be removed from module mips_fpga.
+WARNING: [Synth 8-3332] Sequential element (system/fact_top/FA/DP/Mux2/Z_reg[0]) is unused and will be removed from module mips_fpga.
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\system/mips/dp/ID_stage/multu_enE_reg )
+INFO: [Synth 8-3886] merging instance 'system/mips/dp/EXE_stage/multu_enM_reg' (FD) to 'system/mips/dp/ID_stage/multu_enE_reg'
+INFO: [Synth 8-3886] merging instance 'system/mips/dp/ID_stage/super_selE_reg[0]' (FD) to 'system/mips/dp/ID_stage/super_selE_reg[1]'
+INFO: [Synth 8-3886] merging instance 'system/mips/dp/EXE_stage/super_selM_reg[0]' (FD) to 'system/mips/dp/EXE_stage/super_selM_reg[1]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\system/mips/dp/ID_stage/multu_enE_reg )
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:21 ; elapsed = 00:00:23 . Memory (MB): peak = 737.477 ; gain = 462.520
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+Distributed RAM: Preliminary Mapping  Report (see note below)
++------------+--------------------------+-----------+----------------------+-----------------+
+|Module Name | RTL Object               | Inference | Size (Depth x Width) | Primitives      | 
++------------+--------------------------+-----------+----------------------+-----------------+
+|mips_fpga   | system/mips/dp/rf/rf_reg | Implied   | 32 x 32              | RAM32M x 18     | 
+|mips_fpga   | system/dmem/ram_reg      | Implied   | 64 x 32              | RAM64X1S x 32   | 
++------------+--------------------------+-----------+----------------------+-----------------+
+
+Note: The table above is a preliminary report that shows the Distributed RAMs at the current stage of the synthesis flow. Some Distributed RAMs may be reimplemented as non Distributed RAM primitives later in the synthesis flow. Multiple instantiated RAMs are reported only once.
+
+DSP: Preliminary Mapping  Report (see note below)
++------------+------------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|Module Name | DSP Mapping      | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
++------------+------------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|alu         | A*B              | 18     | 16     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|alu         | (PCIN>>17)+A*B   | 16     | 16     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|alu         | A*B              | 18     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|alu         | (PCIN>>17)+A*B   | 18     | 16     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|mips_fpga   | A*B''            | 18     | 16     | -      | -      | 48     | 0    | 2    | -    | -    | -     | 0    | 0    | 
+|mips_fpga   | (PCIN>>17)+A''*B | 16     | 16     | -      | -      | 48     | 2    | 0    | -    | -    | -     | 0    | 0    | 
+|mips_fpga   | A''*B            | 18     | 18     | -      | -      | 48     | 2    | 0    | -    | -    | -     | 0    | 0    | 
+|mips_fpga   | (PCIN>>17)+A''*B | 18     | 16     | -      | -      | 48     | 2    | 0    | -    | -    | -     | 0    | 0    | 
++------------+------------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+
+Note: The table above is a preliminary report that shows the DSPs inferred at the current stage of the synthesis flow. Some DSP may be reimplemented as non DSP primitives later in the synthesis flow. Multiple instantiated DSPs are reported only once.
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+INFO: [Synth 8-5844] Detected registers with asynchronous reset at DSP/BRAM block boundary. Consider using synchronous reset for optimal packing [C:/Users/Work/Documents/SJSU/Fall 2019/CMPE 140/CMPE-140-Assignment-8/Factorial_Accelerator/Factorial_Blocks.v:53]
+INFO: [Synth 8-5844] Detected registers with asynchronous reset at DSP/BRAM block boundary. Consider using synchronous reset for optimal packing [C:/Users/Work/Documents/SJSU/Fall 2019/CMPE 140/CMPE-140-Assignment-8/Factorial_Accelerator/Factorial_Blocks.v:53]
+INFO: [Synth 8-5844] Detected registers with asynchronous reset at DSP/BRAM block boundary. Consider using synchronous reset for optimal packing [C:/Users/Work/Documents/SJSU/Fall 2019/CMPE 140/CMPE-140-Assignment-8/Factorial_Accelerator/Factorial_Blocks.v:53]
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:36 ; elapsed = 00:00:38 . Memory (MB): peak = 783.066 ; gain = 508.109
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:36 ; elapsed = 00:00:38 . Memory (MB): peak = 803.793 ; gain = 528.836
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+Distributed RAM: Final Mapping  Report
++------------+--------------------------+-----------+----------------------+-----------------+
+|Module Name | RTL Object               | Inference | Size (Depth x Width) | Primitives      | 
++------------+--------------------------+-----------+----------------------+-----------------+
+|mips_fpga   | system/mips/dp/rf/rf_reg | Implied   | 32 x 32              | RAM32M x 18     | 
+|mips_fpga   | system/dmem/ram_reg      | Implied   | 64 x 32              | RAM64X1S x 32   | 
++------------+--------------------------+-----------+----------------------+-----------------+
+
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+INFO: [Synth 8-5844] Detected registers with asynchronous reset at DSP/BRAM block boundary. Consider using synchronous reset for optimal packing [C:/Users/Work/Documents/SJSU/Fall 2019/CMPE 140/CMPE-140-Assignment-8/Factorial_Accelerator/Factorial_Blocks.v:53]
+INFO: [Synth 8-5844] Detected registers with asynchronous reset at DSP/BRAM block boundary. Consider using synchronous reset for optimal packing [C:/Users/Work/Documents/SJSU/Fall 2019/CMPE 140/CMPE-140-Assignment-8/Factorial_Accelerator/Factorial_Blocks.v:53]
+INFO: [Synth 8-5844] Detected registers with asynchronous reset at DSP/BRAM block boundary. Consider using synchronous reset for optimal packing [C:/Users/Work/Documents/SJSU/Fall 2019/CMPE 140/CMPE-140-Assignment-8/Factorial_Accelerator/Factorial_Blocks.v:53]
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:37 ; elapsed = 00:00:39 . Memory (MB): peak = 813.117 ; gain = 538.160
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:38 ; elapsed = 00:00:41 . Memory (MB): peak = 813.117 ; gain = 538.160
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:38 ; elapsed = 00:00:41 . Memory (MB): peak = 813.117 ; gain = 538.160
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:39 ; elapsed = 00:00:41 . Memory (MB): peak = 813.117 ; gain = 538.160
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:39 ; elapsed = 00:00:41 . Memory (MB): peak = 813.117 ; gain = 538.160
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:39 ; elapsed = 00:00:41 . Memory (MB): peak = 813.117 ; gain = 538.160
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:39 ; elapsed = 00:00:41 . Memory (MB): peak = 813.117 ; gain = 538.160
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+Static Shift Register Report:
++------------+--------------------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
+|Module Name | RTL Name                             | Length | Width | Reset Signal | Pull out first Reg | Pull out last Reg | SRL16E | SRLC32E | 
++------------+--------------------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
+|mips_fpga   | system/mips/dp/MEM_stage/jr_selW_reg | 3      | 1     | NO           | NO                 | YES               | 1      | 0       | 
+|mips_fpga   | system/mips/dp/MEM_stage/dm2regW_reg | 3      | 1     | NO           | NO                 | YES               | 1      | 0       | 
+|mips_fpga   | system/mips/dp/MEM_stage/jumpW_reg   | 3      | 1     | NO           | NO                 | YES               | 1      | 0       | 
+|mips_fpga   | system/mips/dp/MEM_stage/we_regW_reg | 3      | 1     | NO           | NO                 | YES               | 1      | 0       | 
++------------+--------------------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
+
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+----------+------+
+|      |Cell      |Count |
++------+----------+------+
+|1     |BUFG      |     3|
+|2     |CARRY4    |    63|
+|3     |DSP48E1   |     4|
+|4     |DSP48E1_1 |     1|
+|5     |DSP48E1_2 |     2|
+|6     |LUT1      |    43|
+|7     |LUT2      |   122|
+|8     |LUT3      |   188|
+|9     |LUT4      |   196|
+|10    |LUT5      |   208|
+|11    |LUT6      |   332|
+|12    |MUXF7     |     5|
+|13    |MUXF8     |     2|
+|14    |RAM32M    |    12|
+|15    |RAM64X1S  |    32|
+|16    |SRL16E    |     4|
+|17    |FDCE      |   168|
+|18    |FDRE      |   416|
+|19    |LD        |    70|
+|20    |IBUF      |     8|
+|21    |OBUF      |    17|
++------+----------+------+
+
+Report Instance Areas: 
++------+-----------------------+---------------------------+------+
+|      |Instance               |Module                     |Cells |
++------+-----------------------+---------------------------+------+
+|1     |top                    |                           |  1896|
+|2     |  bd                   |button_debouncer           |    20|
+|3     |  clk_gen              |clk_gen                    |    56|
+|4     |  led_mux              |led_mux                    |    11|
+|5     |  system               |system                     |  1781|
+|6     |    dmem               |dmem                       |    32|
+|7     |    fact_top           |Factorial_Accelerator      |   327|
+|8     |      FA               |Factorial                  |   281|
+|9     |        CU             |Factorial_CU               |    47|
+|10    |        DP             |Factorial_DP               |   234|
+|11    |          Decrementer  |Decrementer                |   148|
+|12    |          Load_Reg     |Load_Reg                   |    32|
+|13    |          MUL          |MUL                        |    22|
+|14    |          Mux1         |Mux                        |    32|
+|15    |      GoPulse_register |f_register                 |     1|
+|16    |      done_sr          |set_reset_register         |     1|
+|17    |      err_sr           |set_reset_register_2       |     1|
+|18    |      go_register      |f_register_3               |     1|
+|19    |      n_register       |f_register__parameterized0 |     8|
+|20    |      result_register  |f_register__parameterized1 |    34|
+|21    |    gpio_top           |GPIO                       |   165|
+|22    |      AddrDec          |AddrDec                    |     2|
+|23    |      Reg1             |DQReg                      |    34|
+|24    |      Reg2             |DQReg_1                    |   129|
+|25    |    mips               |mips                       |  1257|
+|26    |      dp               |datapath                   |  1257|
+|27    |        EXE_stage      |EXE_stage                  |   262|
+|28    |        ID_stage       |ID_stage                   |   431|
+|29    |        IF_stage       |IF_stage                   |    42|
+|30    |        MEM_stage      |MEM_stage                  |   240|
+|31    |        alu            |alu                        |   239|
+|32    |        pc_plus_4      |adder                      |     1|
+|33    |        pc_plus_br     |adder_0                    |     2|
+|34    |        pc_reg         |dreg                       |    28|
+|35    |        rf             |regfile                    |    12|
++------+-----------------------+---------------------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:39 ; elapsed = 00:00:41 . Memory (MB): peak = 813.117 ; gain = 538.160
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 72 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:30 ; elapsed = 00:00:35 . Memory (MB): peak = 813.117 ; gain = 198.137
+Synthesis Optimization Complete : Time (s): cpu = 00:00:39 ; elapsed = 00:00:41 . Memory (MB): peak = 813.117 ; gain = 538.160
+INFO: [Project 1-571] Translating synthesized netlist
+INFO: [Netlist 29-17] Analyzing 191 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 813.117 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 114 instances were transformed.
+  LD => LDCE: 70 instances
+  RAM32M => RAM32M (RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMS32, RAMS32): 12 instances
+  RAM64X1S => RAM64X1S (RAMS64E): 32 instances
+
+INFO: [Common 17-83] Releasing license: Synthesis
+227 Infos, 81 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:42 ; elapsed = 00:00:44 . Memory (MB): peak = 813.117 ; gain = 538.160
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 813.117 ; gain = 0.000
+WARNING: [Constraints 18-5210] No constraints selected for write.
+Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
+INFO: [Common 17-1381] The checkpoint 'C:/Users/Work/Documents/SJSU/Fall 2019/CMPE 140/CMPE-140-Assignment-8/synth_1/mips_fpga.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file mips_fpga_utilization_synth.rpt -pb mips_fpga_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Mon Dec  9 13:19:55 2019...
